@@ -1,0 +1,26 @@
+{
+  "version": "pwa_template_v1",
+  "generated_from": "template",
+  "tools": [
+    {
+      "id": "MECA_01_Arbre",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Arbre — torsion + flexion",
+      "notes": "Exemple",
+      "inputs": [
+        {
+          "key": "COUPLE",
+          "label": "Couple",
+          "unit": "N·m",
+          "default": 120
+        },
+        {
+          "key": "DIAM",
+          "label": "Diamètre",
+          "unit": "mm",
+          "default": 30
+        }
+      ]
+    }
+  ]
+}
