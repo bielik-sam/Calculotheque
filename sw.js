@@ -1,4 +1,4 @@
-const CACHE="calculo-v1.0.1";
+const CACHE="calculo-v2.0.0";
 const ASSETS=[
   "./",
   "./index.html",

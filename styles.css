@@ -18,3 +18,5 @@ button{padding:10px 12px;border-radius:10px;border:1px solid #d9e0e7;background:
 button.primary{background:var(--bg);color:#fff;border-color:var(--bg);}
 small.muted,.muted{color:var(--muted);}
 .list{display:grid;gap:10px;}
+.hr{height:1px;background:#e7edf3;margin:10px 0;}
+.code{font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:12px;}
