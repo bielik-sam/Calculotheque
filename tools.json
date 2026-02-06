@@ -1,26 +1,6169 @@
 {
-  "version": "pwa_template_v1",
-  "generated_from": "template",
+  "version": "pwa_v1_catalogue",
+  "generated_from": "Calculotheque_Industrie_V5_4.xlsx",
   "tools": [
     {
-      "id": "MECA_01_Arbre",
+      "id": "MECA_01",
       "domain": "🔩 Mécanique & Structures",
-      "name": "Arbre — torsion + flexion",
-      "notes": "Exemple",
+      "name": "Dimensionnement arbre (torsion + flexion)",
+      "sheet": "MECA_01_Arbre",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COUPLE_TRANSMIS_T",
+          "label": "Couple transmis T",
+          "unit": "N·m",
+          "default": 250
+        },
+        {
+          "key": "MOMENT_DE_FLEXION_M",
+          "label": "Moment de flexion M",
+          "unit": "N·m",
+          "default": 400
+        },
+        {
+          "key": "DIAM_TRE_EXISTANT_D",
+          "label": "Diamètre existant D",
+          "unit": "mm",
+          "default": 40
+        },
+        {
+          "key": "LIMITE_LASTIQUE_RE",
+          "label": "Limite élastique Re",
+          "unit": "MPa",
+          "default": 355
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$6"
+        }
+      ]
+    },
+    {
+      "id": "MECA_02",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Calcul couple / puissance",
+      "sheet": "MECA_02_CouplePuiss",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "VITESSE_DE_ROTATION_N",
+          "label": "Vitesse de rotation n",
+          "unit": "tr/min",
+          "default": 1500
+        },
+        {
+          "key": "COUPLE_T",
+          "label": "Couple T",
+          "unit": "N·m",
+          "default": 120
+        },
+        {
+          "key": "PUISSANCE_P",
+          "label": "Puissance P",
+          "unit": "kW",
+          "default": 18.5
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "MECA_03",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Vérification roulements (durée de vie)",
+      "sheet": "MECA_03_Roulements",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CAPACIT_DYNAMIQUE_C",
+          "label": "Capacité dynamique C",
+          "unit": "kN",
+          "default": 35
+        },
+        {
+          "key": "CHARGE_QUIVALENTE_P",
+          "label": "Charge équivalente P",
+          "unit": "kN",
+          "default": 12
+        },
+        {
+          "key": "VITESSE_N",
+          "label": "Vitesse n",
+          "unit": "tr/min",
+          "default": 600
+        },
+        {
+          "key": "TYPE_1_BILL_2_ROUL",
+          "label": "Type (1=Bill./2=Roul.)",
+          "unit": "-",
+          "default": 1
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$9"
+        }
+      ]
+    },
+    {
+      "id": "MECA_04",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Calcul visserie (traction + cisaillement)",
+      "sheet": "MECA_04_Visserie",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "EFFORT_AXIAL_TOTAL_F",
+          "label": "Effort axial total F",
+          "unit": "kN",
+          "default": 25
+        },
+        {
+          "key": "EFFORT_TRANCHANT_TOTAL_V",
+          "label": "Effort tranchant total V",
+          "unit": "kN",
+          "default": 18
+        },
+        {
+          "key": "NOMBRE_DE_VIS",
+          "label": "Nombre de vis",
+          "unit": "-",
+          "default": 4
+        },
+        {
+          "key": "SECTION_DE_TRACTION_AS",
+          "label": "Section de traction As",
+          "unit": "mm²",
+          "default": 84.3
+        },
+        {
+          "key": "LIMITE_LASTIQUE_RE",
+          "label": "Limite élastique Re",
+          "unit": "MPa",
+          "default": 640
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$7"
+        }
+      ]
+    },
+    {
+      "id": "MECA_05",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Flambage poteaux (Euler)",
+      "sheet": "MECA_05_Flambage",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGE_COMPRESSION_P",
+          "label": "Charge compression P",
+          "unit": "kN",
+          "default": 35
+        },
+        {
+          "key": "LONGUEUR_LIBRE_L",
+          "label": "Longueur libre L",
+          "unit": "mm",
+          "default": 1200
+        },
+        {
+          "key": "FACTEUR_D_APPUIS_K",
+          "label": "Facteur d'appuis K",
+          "unit": "-",
+          "default": 1
+        },
+        {
+          "key": "MODULE_E",
+          "label": "Module E",
+          "unit": "GPa",
+          "default": 210
+        },
+        {
+          "key": "INERTIE_I",
+          "label": "Inertie I",
+          "unit": "mm⁴",
+          "default": 2200000
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$8"
+        }
+      ]
+    },
+    {
+      "id": "MECA_06",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Vérification châssis mécano-soudé (flexion)",
+      "sheet": "MECA_06_Chassis",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGE_F_CENTRE",
+          "label": "Charge F (centre)",
+          "unit": "kN",
+          "default": 8
+        },
+        {
+          "key": "PORT_E_L",
+          "label": "Portée L",
+          "unit": "mm",
+          "default": 1500
+        },
+        {
+          "key": "MODULE_E",
+          "label": "Module E",
+          "unit": "GPa",
+          "default": 210
+        },
+        {
+          "key": "INERTIE_I",
+          "label": "Inertie I",
+          "unit": "mm⁴",
+          "default": 60000000
+        },
+        {
+          "key": "MODULE_DE_SECTION_W",
+          "label": "Module de section W",
+          "unit": "mm³",
+          "default": 180000
+        },
+        {
+          "key": "LIMITE_LASTIQUE_RE",
+          "label": "Limite élastique Re",
+          "unit": "MPa",
+          "default": 355
+        }
+      ]
+    },
+    {
+      "id": "MECA_07",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Masse / inertie (outil, organe)",
+      "sheet": "MECA_07_MasseInertie",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "NOTE",
+          "label": "Note",
+          "unit": "-",
+          "default": "\"Renseigner la table composants ci-dessous\""
+        },
+        {
+          "key": "TABLE_COMPOSANTS_JUSQU_6",
+          "label": "Table composants (jusqu’à 6)",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "COMPOSANT",
+          "label": "Composant",
+          "unit": "Rayon / distance",
+          "default": "Masse"
+        },
+        {
+          "key": "COMP_1",
+          "label": "Comp 1",
+          "unit": "0.25",
+          "default": 10
+        },
+        {
+          "key": "COMP_2",
+          "label": "Comp 2",
+          "unit": "-",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "id": "MECA_08",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Centre de gravité (CG)",
+      "sheet": "MECA_08_CG",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "NOTE",
+          "label": "Note",
+          "unit": "-",
+          "default": "\"Renseigner la table composants ci-dessous\""
+        },
+        {
+          "key": "TABLE_COMPOSANTS_JUSQU_6_COORDON",
+          "label": "Table composants (jusqu’à 6) — coordonnées (m)",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "COMPOSANT",
+          "label": "Composant",
+          "unit": "x (m)",
+          "default": "Masse (kg)"
+        },
+        {
+          "key": "COMP_1",
+          "label": "Comp 1",
+          "unit": "0.3",
+          "default": 10
+        },
+        {
+          "key": "COMP_2",
+          "label": "Comp 2",
+          "unit": "-",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "id": "MECA_09",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Flexion poutre (contrainte)",
+      "sheet": "MECA_09_Flexion",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "MOMENT_M",
+          "label": "Moment M",
+          "unit": "N·m",
+          "default": 1000.0
+        },
+        {
+          "key": "MODULE_W",
+          "label": "Module W",
+          "unit": "m³",
+          "default": 1e-05
+        }
+      ]
+    },
+    {
+      "id": "MECA_10",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Flèche poutre (simple appui)",
+      "sheet": "MECA_10_Fleche",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGE_F",
+          "label": "Charge F",
+          "unit": "N",
+          "default": 1000.0
+        },
+        {
+          "key": "LONGUEUR_L",
+          "label": "Longueur L",
+          "unit": "m",
+          "default": 1.0
+        },
+        {
+          "key": "E",
+          "label": "E",
+          "unit": "MPa",
+          "default": 210000.0
+        },
+        {
+          "key": "INERTIE_I",
+          "label": "Inertie I",
+          "unit": "m⁴",
+          "default": 1e-06
+        }
+      ]
+    },
+    {
+      "id": "MECA_11",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Ressort (k, compression)",
+      "sheet": "MECA_11_Ressort",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "FORCE",
+          "label": "Force",
+          "unit": "N",
+          "default": 100.0
+        },
+        {
+          "key": "COURSE",
+          "label": "Course",
+          "unit": "mm",
+          "default": 20.0
+        }
+      ]
+    },
+    {
+      "id": "MECA_12",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Transmission (rapport)",
+      "sheet": "MECA_12_Trans",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "VITESSE_ENTR_E",
+          "label": "Vitesse entrée",
+          "unit": "rpm",
+          "default": 1500.0
+        },
+        {
+          "key": "VITESSE_SORTIE",
+          "label": "Vitesse sortie",
+          "unit": "rpm",
+          "default": 300.0
+        }
+      ]
+    },
+    {
+      "id": "MECA_13",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Rendement mécanique global",
+      "sheet": "MECA_13_Rend",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "RENDEMENT_TAGE_1",
+          "label": "Rendement étage 1",
+          "unit": "-",
+          "default": 0.95
+        },
+        {
+          "key": "RENDEMENT_TAGE_2",
+          "label": "Rendement étage 2",
+          "unit": "-",
+          "default": 0.97
+        },
+        {
+          "key": "RENDEMENT_TAGE_3",
+          "label": "Rendement étage 3",
+          "unit": "-",
+          "default": 0.98
+        }
+      ]
+    },
+    {
+      "id": "MECA_14",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Fatigue (simplifiée)",
+      "sheet": "MECA_14_Fatigue",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "A",
+          "label": "σa",
+          "unit": "MPa",
+          "default": 80.0
+        },
+        {
+          "key": "D",
+          "label": "σD",
+          "unit": "MPa",
+          "default": 120.0
+        },
+        {
+          "key": "COEF_S_CURIT",
+          "label": "Coef sécurité",
+          "unit": "-",
+          "default": 1.2
+        }
+      ]
+    },
+    {
+      "id": "MECA_15",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Axe creux (torsion)",
+      "sheet": "MECA_15_AxeCreux",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COUPLE_T",
+          "label": "Couple T",
+          "unit": "N·m",
+          "default": 500.0
+        },
+        {
+          "key": "DIAM_TRE_EXT_D",
+          "label": "Diamètre ext D",
+          "unit": "mm",
+          "default": 40.0
+        },
+        {
+          "key": "DIAM_TRE_INT_D",
+          "label": "Diamètre int d",
+          "unit": "mm",
+          "default": 20.0
+        }
+      ]
+    },
+    {
+      "id": "MECA_16",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Clavette (cisaillement)",
+      "sheet": "MECA_16_Clavette",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COUPLE_T",
+          "label": "Couple T",
+          "unit": "N·m",
+          "default": 200.0
+        },
+        {
+          "key": "RAYON_R",
+          "label": "Rayon r",
+          "unit": "mm",
+          "default": 20.0
+        },
+        {
+          "key": "LARGEUR_B",
+          "label": "Largeur b",
+          "unit": "mm",
+          "default": 8.0
+        },
+        {
+          "key": "LONGUEUR_L",
+          "label": "Longueur L",
+          "unit": "mm",
+          "default": 30.0
+        }
+      ]
+    },
+    {
+      "id": "MECA_17",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Pression de contact (Hertz, approx.)",
+      "sheet": "MECA_17_Hertz",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "FORCE_F",
+          "label": "Force F",
+          "unit": "N",
+          "default": 1000.0
+        },
+        {
+          "key": "AIRE_CONTACT",
+          "label": "Aire contact",
+          "unit": "mm²",
+          "default": 50.0
+        }
+      ]
+    },
+    {
+      "id": "MECA_18",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Cordon de soudure (cisaillement, simpl.)",
+      "sheet": "MECA_18_Cordon",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "EFFORT_F",
+          "label": "Effort F",
+          "unit": "N",
+          "default": 5000.0
+        },
+        {
+          "key": "LONGUEUR_CORDON",
+          "label": "Longueur cordon",
+          "unit": "mm",
+          "default": 100.0
+        },
+        {
+          "key": "GORGE_A",
+          "label": "Gorge a",
+          "unit": "mm",
+          "default": 4.0
+        }
+      ]
+    },
+    {
+      "id": "MECA_19",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Vérin (force vs pression)",
+      "sheet": "MECA_19_Verin",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "DIAM_TRE_PISTON",
+          "label": "Diamètre piston",
+          "unit": "mm",
+          "default": 50.0
+        },
+        {
+          "key": "PRESSION",
+          "label": "Pression",
+          "unit": "bar",
+          "default": 6.0
+        },
+        {
+          "key": "COEF_PERTES",
+          "label": "Coef pertes",
+          "unit": "-",
+          "default": 0.9
+        }
+      ]
+    },
+    {
+      "id": "MECA_20",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Effort de glissement (frottement)",
+      "sheet": "MECA_20_Frott",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGE_NORMALE_N",
+          "label": "Charge normale N",
+          "unit": "N",
+          "default": 2000.0
+        },
+        {
+          "key": "COEF",
+          "label": "Coef μ",
+          "unit": "-",
+          "default": 0.2
+        }
+      ]
+    },
+    {
+      "id": "MECA_22",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Ressort (raideur)",
+      "sheet": "MECA_22_Ressort",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "FORCE",
+          "label": "Force",
+          "unit": "N",
+          "default": 150.0
+        },
+        {
+          "key": "COURSE",
+          "label": "Course",
+          "unit": "mm",
+          "default": 25.0
+        }
+      ]
+    },
+    {
+      "id": "MECA_23",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Poutre (σ = M/W)",
+      "sheet": "MECA_23_PoutreSigma",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "MOMENT_M",
+          "label": "Moment M",
+          "unit": "N·m",
+          "default": 1200.0
+        },
+        {
+          "key": "MODULE_W",
+          "label": "Module W",
+          "unit": "m³",
+          "default": 1.2e-05
+        }
+      ]
+    },
+    {
+      "id": "MECA_24",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Flèche poutre (simple appui, charge milieu)",
+      "sheet": "MECA_24_PoutreFleche",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGE_F",
+          "label": "Charge F",
+          "unit": "N",
+          "default": 1200.0
+        },
+        {
+          "key": "LONGUEUR_L",
+          "label": "Longueur L",
+          "unit": "m",
+          "default": 1.2
+        },
+        {
+          "key": "E",
+          "label": "E",
+          "unit": "MPa",
+          "default": 210000.0
+        },
+        {
+          "key": "INERTIE_I",
+          "label": "Inertie I",
+          "unit": "m⁴",
+          "default": 1e-06
+        }
+      ]
+    },
+    {
+      "id": "MECA_25",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Stabilité renversement (marge %)",
+      "sheet": "MECA_25_Stab",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "MOMENT_STABILISANT",
+          "label": "Moment stabilisant",
+          "unit": "N·m",
+          "default": 600.0
+        },
+        {
+          "key": "MOMENT_RENVERSANT",
+          "label": "Moment renversant",
+          "unit": "N·m",
+          "default": 450.0
+        }
+      ]
+    },
+    {
+      "id": "MECA_26",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Inertie rotation (disque)",
+      "sheet": "MECA_26_Inertie",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "MASSE",
+          "label": "Masse",
+          "unit": "kg",
+          "default": 10.0
+        },
+        {
+          "key": "RAYON",
+          "label": "Rayon",
+          "unit": "m",
+          "default": 0.15
+        }
+      ]
+    },
+    {
+      "id": "MECA_27",
+      "domain": "🔩 Mécanique & Structures",
+      "name": "Centre de gravité 2 masses (1D)",
+      "sheet": "MECA_27_CG",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "M1",
+          "label": "m1",
+          "unit": "kg",
+          "default": 20.0
+        },
+        {
+          "key": "X1",
+          "label": "x1",
+          "unit": "m",
+          "default": 0.2
+        },
+        {
+          "key": "M2",
+          "label": "m2",
+          "unit": "kg",
+          "default": 10.0
+        },
+        {
+          "key": "X2",
+          "label": "x2",
+          "unit": "m",
+          "default": 0.8
+        }
+      ]
+    },
+    {
+      "id": "AUTO_01",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Nb E/S automate",
+      "sheet": "AUTO_01_IO",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "ENTR_ES",
+          "label": "Entrées",
+          "unit": "-",
+          "default": 120.0
+        },
+        {
+          "key": "SORTIES",
+          "label": "Sorties",
+          "unit": "-",
+          "default": 80.0
+        },
+        {
+          "key": "MASSE_ACCESSOIRES",
+          "label": "Masse accessoires",
+          "unit": "kg",
+          "default": 3
+        },
+        {
+          "key": "CHARGE_UTILE_ROBOT_CATALOGUE",
+          "label": "Charge utile robot (catalogue)",
+          "unit": "kg",
+          "default": 50
+        },
+        {
+          "key": "MARGE_AUTO",
+          "label": "Marge (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$16"
+        }
+      ]
+    },
+    {
+      "id": "AUTO_02",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Temps cycle logique",
+      "sheet": "AUTO_02_Temps",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TEMPS_SCAN",
+          "label": "Temps scan",
+          "unit": "ms",
+          "default": 12.0
+        },
+        {
+          "key": "NB_SCANS",
+          "label": "Nb scans",
+          "unit": "-",
+          "default": 40.0
+        },
+        {
+          "key": "MASSE_ACCESSOIRES",
+          "label": "Masse accessoires",
+          "unit": "kg",
+          "default": 3
+        },
+        {
+          "key": "CHARGE_UTILE_ROBOT_CATALOGUE",
+          "label": "Charge utile robot (catalogue)",
+          "unit": "kg",
+          "default": 50
+        },
+        {
+          "key": "MARGE_AUTO",
+          "label": "Marge (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$16"
+        }
+      ]
+    },
+    {
+      "id": "PLC_01",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Temps de cycle automate (scan)",
+      "sheet": "PLC_01_Scan",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "NOMBRE_D_INSTRUCTIONS",
+          "label": "Nombre d'instructions",
+          "unit": "-",
+          "default": 8000
+        },
+        {
+          "key": "TEMPS_MOYEN_INSTRUCTION",
+          "label": "Temps moyen / instruction",
+          "unit": "µs",
+          "default": 0.4
+        },
+        {
+          "key": "TEMPS_MISE_JOUR_E_S",
+          "label": "Temps mise à jour E/S",
+          "unit": "ms",
+          "default": 1.2
+        },
+        {
+          "key": "TEMPS_COMMUNICATION",
+          "label": "Temps communication",
+          "unit": "ms",
+          "default": 0.6
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "ROB_01",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Charge utile robot (outil + pièce)",
+      "sheet": "ROB_01_Payload",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "MASSE_OUTIL_EOAT",
+          "label": "Masse outil / EOAT",
+          "unit": "kg",
+          "default": 18
+        },
+        {
+          "key": "MASSE_PI_CE",
+          "label": "Masse pièce",
+          "unit": "kg",
+          "default": 12
+        },
+        {
+          "key": "MASSE_ACCESSOIRES",
+          "label": "Masse accessoires",
+          "unit": "kg",
+          "default": 3
+        },
+        {
+          "key": "CHARGE_UTILE_ROBOT_CATALOGUE",
+          "label": "Charge utile robot (catalogue)",
+          "unit": "kg",
+          "default": 50
+        },
+        {
+          "key": "MARGE_AUTO",
+          "label": "Marge (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$16"
+        }
+      ]
+    },
+    {
+      "id": "ROB_02",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Calcul moment au poignet",
+      "sheet": "ROB_02_MomentPoignet",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "MASSE_PORT_E_OUTIL_PI_CE",
+          "label": "Masse portée (outil+pièce)",
+          "unit": "kg",
+          "default": 30
+        },
+        {
+          "key": "D_PORT_CG_AU_POIGNET",
+          "label": "Déport CG au poignet",
+          "unit": "m",
+          "default": 0.25
+        },
+        {
+          "key": "COUPLE_OUTIL_OPTION",
+          "label": "Couple outil (option)",
+          "unit": "N·m",
+          "default": 10
+        },
+        {
+          "key": "MOMENT_ADMISSIBLE_POIGNET",
+          "label": "Moment admissible poignet",
+          "unit": "N·m",
+          "default": 120
+        },
+        {
+          "key": "MARGE_AUTO",
+          "label": "Marge (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$17"
+        },
+        {
+          "key": "G_AUTO",
+          "label": "g (auto)",
+          "unit": "m/s²",
+          "default": "='01_PARAM'!$E$14"
+        }
+      ]
+    },
+    {
+      "id": "ROB_03",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Vérification portée / enveloppe",
+      "sheet": "ROB_03_Portee",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PORT_E_REQUISE",
+          "label": "Portée requise",
+          "unit": "mm",
+          "default": 1800
+        },
+        {
+          "key": "PORT_E_ROBOT_CATALOGUE",
+          "label": "Portée robot (catalogue)",
+          "unit": "mm",
+          "default": 2000
+        },
+        {
+          "key": "MARGE_S_CURIT",
+          "label": "Marge sécurité",
+          "unit": "mm",
+          "default": 100
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "ROB_04",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Temps de cycle robot (mouvement)",
+      "sheet": "ROB_04_CycleRobot",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "DISTANCE_DE_D_PLACEMENT",
+          "label": "Distance de déplacement",
+          "unit": "m",
+          "default": 1.2
+        },
+        {
+          "key": "VITESSE_MAX",
+          "label": "Vitesse max",
+          "unit": "m/s",
+          "default": 1.5
+        },
+        {
+          "key": "ACC_L_RATION",
+          "label": "Accélération",
+          "unit": "m/s²",
+          "default": 3
+        },
+        {
+          "key": "TEMPS_ARR_T_PROCESS",
+          "label": "Temps arrêt / process",
+          "unit": "s",
+          "default": 1.2
+        },
+        {
+          "key": "MARGE_CYCLE_AUTO",
+          "label": "Marge cycle (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$10"
+        }
+      ]
+    },
+    {
+      "id": "ROB_05",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Dimensionnement servo / axe",
+      "sheet": "ROB_05_Servo",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "INERTIE_CHARGE_AXE_SORTIE",
+          "label": "Inertie charge (axe sortie)",
+          "unit": "kg·m²",
+          "default": 0.18
+        },
+        {
+          "key": "INERTIE_MOTEUR",
+          "label": "Inertie moteur",
+          "unit": "kg·m²",
+          "default": 0.012
+        },
+        {
+          "key": "RAPPORT_R_DUCTION_N",
+          "label": "Rapport réduction N",
+          "unit": "-",
+          "default": 10
+        },
+        {
+          "key": "ACC_L_RATION_ANGULAIRE_SORTIE",
+          "label": "Accélération angulaire sortie",
+          "unit": "rad/s²",
+          "default": 25
+        },
+        {
+          "key": "COUPLE_CHARGE_SORTIE",
+          "label": "Couple charge sortie",
+          "unit": "N·m",
+          "default": 20
+        },
+        {
+          "key": "COUPLE_FRICTION_ESTIM",
+          "label": "Couple friction (estim.)",
+          "unit": "N·m",
+          "default": 2
+        }
+      ]
+    },
+    {
+      "id": "ROB_06",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Choix moteur (couple / vitesse / puissance)",
+      "sheet": "ROB_06_Moteur",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COUPLE_ARBRE",
+          "label": "Couple arbre",
+          "unit": "N·m",
+          "default": 45
+        },
+        {
+          "key": "VITESSE",
+          "label": "Vitesse",
+          "unit": "tr/min",
+          "default": 900
+        },
+        {
+          "key": "RENDEMENT_AUTO",
+          "label": "Rendement (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$12"
+        },
+        {
+          "key": "COEF_S_CURIT",
+          "label": "Coef sécurité",
+          "unit": "-",
+          "default": 1.2
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "ROB_08",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Accélération axe (profil simple)",
+      "sheet": "ROB_08_Accel",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "VITESSE_MAX",
+          "label": "Vitesse max",
+          "unit": "m/s",
+          "default": 1.0
+        },
+        {
+          "key": "TEMPS_ACCEL",
+          "label": "Temps accel",
+          "unit": "s",
+          "default": 0.2
+        }
+      ]
+    },
+    {
+      "id": "ROB_09",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Effort admissible (approx.)",
+      "sheet": "ROB_09_Force",
+      "notes": "",
       "inputs": [
         {
           "key": "COUPLE",
           "label": "Couple",
           "unit": "N·m",
+          "default": 50.0
+        },
+        {
+          "key": "BRAS_DE_LEVIER",
+          "label": "Bras de levier",
+          "unit": "m",
+          "default": 0.25
+        }
+      ]
+    },
+    {
+      "id": "ROB_10",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Cycles/an (usure approximative)",
+      "sheet": "ROB_10_Cycles",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TEMPS_CYCLE",
+          "label": "Temps cycle",
+          "unit": "s",
+          "default": 20.0
+        },
+        {
+          "key": "HEURES_JOUR",
+          "label": "Heures/jour",
+          "unit": "h",
+          "default": 16.0
+        },
+        {
+          "key": "JOURS_AN",
+          "label": "Jours/an",
+          "unit": "j",
+          "default": 220.0
+        }
+      ]
+    },
+    {
+      "id": "ROB_11",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Répartition charge outil",
+      "sheet": "ROB_11_LoadShare",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "MASSE_OUTIL",
+          "label": "Masse outil",
+          "unit": "kg",
+          "default": 5.0
+        },
+        {
+          "key": "MASSE_PI_CE",
+          "label": "Masse pièce",
+          "unit": "kg",
+          "default": 3.0
+        },
+        {
+          "key": "MASSE_C_BLES",
+          "label": "Masse câbles",
+          "unit": "kg",
+          "default": 1.0
+        }
+      ]
+    },
+    {
+      "id": "ROB_12",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Couple axe (inertie)",
+      "sheet": "ROB_12_CoupleAxe",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "INERTIE_J",
+          "label": "Inertie J",
+          "unit": "kg·m²",
+          "default": 0.5
+        },
+        {
+          "key": "ACC_L_RATION",
+          "label": "Accélération",
+          "unit": "rad/s²",
+          "default": 5.0
+        }
+      ]
+    },
+    {
+      "id": "ROB_14",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Oscillations (fréquence propre, approx.)",
+      "sheet": "ROB_14_Oscill",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "RAIDEUR_K",
+          "label": "Raideur k",
+          "unit": "N/m",
+          "default": 20000.0
+        },
+        {
+          "key": "MASSE_M",
+          "label": "Masse m",
+          "unit": "kg",
+          "default": 10.0
+        }
+      ]
+    },
+    {
+      "id": "ROB_15",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Précision / tolérance vs répétabilité (guide)",
+      "sheet": "ROB_15_Precision",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TOL_RANCE_PI_CE",
+          "label": "Tolérance pièce",
+          "unit": "mm",
+          "default": 0.5
+        },
+        {
+          "key": "COEF_PROCESS",
+          "label": "Coef process",
+          "unit": "-",
+          "default": 0.33
+        }
+      ]
+    },
+    {
+      "id": "ROB_16",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Temps cycle multi-robots (goulot)",
+      "sheet": "ROB_16_MultiRobot",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CYCLE_ROBOT_A",
+          "label": "Cycle robot A",
+          "unit": "s",
+          "default": 18.0
+        },
+        {
+          "key": "CYCLE_ROBOT_B",
+          "label": "Cycle robot B",
+          "unit": "s",
+          "default": 22.0
+        },
+        {
+          "key": "CYCLE_ROBOT_C",
+          "label": "Cycle robot C",
+          "unit": "s",
+          "default": 20.0
+        }
+      ]
+    },
+    {
+      "id": "ROB_19",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Moment au poignet (outil+pièce)",
+      "sheet": "ROB_19_MomentPoignet",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "MASSE_TOTALE",
+          "label": "Masse totale",
+          "unit": "kg",
+          "default": 8.0
+        },
+        {
+          "key": "CG_OUTIL",
+          "label": "CG outil",
+          "unit": "m",
+          "default": 0.18
+        },
+        {
+          "key": "FACTEUR_DYNAMIQUE",
+          "label": "Facteur dynamique",
+          "unit": "-",
+          "default": 1.3
+        }
+      ]
+    },
+    {
+      "id": "ROB_20",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Dimensionnement servo (couple)",
+      "sheet": "ROB_20_Servo",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "INERTIE_J",
+          "label": "Inertie J",
+          "unit": "kg·m²",
+          "default": 0.4
+        },
+        {
+          "key": "ACC_L_RATION",
+          "label": "Accélération α",
+          "unit": "rad/s²",
+          "default": 8.0
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.9
+        }
+      ]
+    },
+    {
+      "id": "ROB_21",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Choix moteur (P = T·ω)",
+      "sheet": "ROB_21_Moteur",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COUPLE",
+          "label": "Couple",
+          "unit": "N·m",
+          "default": 40.0
+        },
+        {
+          "key": "VITESSE",
+          "label": "Vitesse",
+          "unit": "rpm",
+          "default": 1500.0
+        }
+      ]
+    },
+    {
+      "id": "ROB_22",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Temps cycle automate (scan)",
+      "sheet": "ROB_22_CyclePLC",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TEMPS_CYCLE_SCAN",
+          "label": "Temps cycle scan",
+          "unit": "ms",
+          "default": 10.0
+        },
+        {
+          "key": "NB_SCANS",
+          "label": "Nb scans",
+          "unit": "-",
+          "default": 50.0
+        }
+      ]
+    },
+    {
+      "id": "ROB_23",
+      "domain": "🤖 Robotique & Automatisme",
+      "name": "Vérif portée / enveloppe (marge)",
+      "sheet": "ROB_23_Envelope",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PORT_E_ROBOT",
+          "label": "Portée robot",
+          "unit": "m",
+          "default": 2.0
+        },
+        {
+          "key": "DISTANCE_CIBLE",
+          "label": "Distance cible",
+          "unit": "m",
+          "default": 1.7
+        }
+      ]
+    },
+    {
+      "id": "VIS_01",
+      "domain": "👁️ Vision industrielle",
+      "name": "Champ de vision (FOV)",
+      "sheet": "VIS_01_FOV",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TAILLE_CAPTEUR",
+          "label": "Taille capteur",
+          "unit": "mm",
+          "default": 11.3
+        },
+        {
+          "key": "FOCALE",
+          "label": "Focale",
+          "unit": "mm",
+          "default": 16.0
+        },
+        {
+          "key": "DISTANCE_DE_TRAVAIL",
+          "label": "Distance de travail",
+          "unit": "mm",
+          "default": 300.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_02",
+      "domain": "👁️ Vision industrielle",
+      "name": "Résolution (µm/pixel)",
+      "sheet": "VIS_02_Resolution",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "FOV",
+          "label": "FOV",
+          "unit": "mm",
+          "default": 200.0
+        },
+        {
+          "key": "PIXELS",
+          "label": "Pixels",
+          "unit": "px",
+          "default": 2448.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_03",
+      "domain": "👁️ Vision industrielle",
+      "name": "Distance de travail (approx.)",
+      "sheet": "VIS_03_WorkDist",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "FOCALE",
+          "label": "Focale",
+          "unit": "mm",
+          "default": 16.0
+        },
+        {
+          "key": "FOV_SOUHAIT",
+          "label": "FOV souhaité",
+          "unit": "mm",
+          "default": 200.0
+        },
+        {
+          "key": "TAILLE_CAPTEUR",
+          "label": "Taille capteur",
+          "unit": "mm",
+          "default": 11.3
+        }
+      ]
+    },
+    {
+      "id": "VIS_04",
+      "domain": "👁️ Vision industrielle",
+      "name": "Choix focale (approx.)",
+      "sheet": "VIS_04_Focale",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TAILLE_CAPTEUR",
+          "label": "Taille capteur",
+          "unit": "mm",
+          "default": 11.3
+        },
+        {
+          "key": "FOV_SOUHAIT",
+          "label": "FOV souhaité",
+          "unit": "mm",
+          "default": 200.0
+        },
+        {
+          "key": "DISTANCE_DE_TRAVAIL",
+          "label": "Distance de travail",
+          "unit": "mm",
+          "default": 300.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_05",
+      "domain": "👁️ Vision industrielle",
+      "name": "Profondeur de champ (approx.)",
+      "sheet": "VIS_05_DOF",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "DISTANCE_DE_TRAVAIL",
+          "label": "Distance de travail",
+          "unit": "mm",
+          "default": 300.0
+        },
+        {
+          "key": "OUVERTURE_F",
+          "label": "Ouverture f/",
+          "unit": "-",
+          "default": 8.0
+        },
+        {
+          "key": "CERCLE_CONFUSION",
+          "label": "Cercle confusion",
+          "unit": "mm",
+          "default": 0.02
+        }
+      ]
+    },
+    {
+      "id": "VIS_06",
+      "domain": "👁️ Vision industrielle",
+      "name": "Temps d’exposition max (flou)",
+      "sheet": "VIS_06_Expo",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "VITESSE_PI_CE",
+          "label": "Vitesse pièce",
+          "unit": "m/s",
+          "default": 1.0
+        },
+        {
+          "key": "FLOU_MAX",
+          "label": "Flou max",
+          "unit": "mm",
+          "default": 0.1
+        }
+      ]
+    },
+    {
+      "id": "VIS_07",
+      "domain": "👁️ Vision industrielle",
+      "name": "Flou de mouvement (mm)",
+      "sheet": "VIS_07_Blur",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "VITESSE_PI_CE",
+          "label": "Vitesse pièce",
+          "unit": "m/s",
+          "default": 1.0
+        },
+        {
+          "key": "EXPOSITION",
+          "label": "Exposition",
+          "unit": "ms",
+          "default": 2.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_08",
+      "domain": "👁️ Vision industrielle",
+      "name": "Dimensionnement éclairage (indicatif)",
+      "sheet": "VIS_08_Light",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "SURFACE_CLAIR_E",
+          "label": "Surface éclairée",
+          "unit": "m²",
+          "default": 0.02
+        },
+        {
+          "key": "CLAIREMENT_CIBLE",
+          "label": "Éclairement cible",
+          "unit": "lux",
+          "default": 20000.0
+        },
+        {
+          "key": "RENDEMENT_OPTIQUE",
+          "label": "Rendement optique",
+          "unit": "-",
+          "default": 0.3
+        }
+      ]
+    },
+    {
+      "id": "VIS_09",
+      "domain": "👁️ Vision industrielle",
+      "name": "Contraste (Michelson)",
+      "sheet": "VIS_09_SNR",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "IMAX",
+          "label": "Imax",
+          "unit": "-",
+          "default": 200.0
+        },
+        {
+          "key": "IMIN",
+          "label": "Imin",
+          "unit": "-",
+          "default": 50.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_10",
+      "domain": "👁️ Vision industrielle",
+      "name": "Temps de cycle vision",
+      "sheet": "VIS_10_Cycle",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "ACQUISITION",
+          "label": "Acquisition",
+          "unit": "ms",
+          "default": 50.0
+        },
+        {
+          "key": "TRAITEMENT",
+          "label": "Traitement",
+          "unit": "ms",
+          "default": 30.0
+        },
+        {
+          "key": "COMMS",
+          "label": "Comms",
+          "unit": "ms",
+          "default": 10.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_11",
+      "domain": "👁️ Vision industrielle",
+      "name": "Taille pixel sur objet (µm/px)",
+      "sheet": "VIS_11_PixelSize",
+      "notes": "Pré-dimensionnement : granularité vs tolérance.",
+      "inputs": [
+        {
+          "key": "FOV_LARGEUR",
+          "label": "FOV largeur",
+          "unit": "mm",
+          "default": 200.0
+        },
+        {
+          "key": "R_SOLUTION_X",
+          "label": "Résolution X",
+          "unit": "px",
+          "default": 1920.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_12",
+      "domain": "👁️ Vision industrielle",
+      "name": "Grandissement (M)",
+      "sheet": "VIS_12_Magnif",
+      "notes": "M = capteur/FOV. Aide choix optique.",
+      "inputs": [
+        {
+          "key": "TAILLE_CAPTEUR",
+          "label": "Taille capteur",
+          "unit": "mm",
+          "default": 7.2
+        },
+        {
+          "key": "FOV_LARGEUR",
+          "label": "FOV largeur",
+          "unit": "mm",
+          "default": 200.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_13",
+      "domain": "👁️ Vision industrielle",
+      "name": "Flou de mouvement max (px)",
+      "sheet": "VIS_13_BlurMax",
+      "notes": "Cible typique : <0.5 px.",
+      "inputs": [
+        {
+          "key": "VITESSE_PI_CE",
+          "label": "Vitesse pièce",
+          "unit": "m/s",
+          "default": 0.5
+        },
+        {
+          "key": "TEMPS_EXPO",
+          "label": "Temps expo",
+          "unit": "ms",
+          "default": 2.0
+        },
+        {
+          "key": "M_PX",
+          "label": "µm/px",
+          "unit": "µm/px",
+          "default": 120.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_14",
+      "domain": "👁️ Vision industrielle",
+      "name": "Éclairement requis (relatif)",
+      "sheet": "VIS_14_Illumin",
+      "notes": "x>3 : penser strobe/optique/ISO.",
+      "inputs": [
+        {
+          "key": "TEMPS_EXPO_ACTUEL",
+          "label": "Temps expo actuel",
+          "unit": "ms",
+          "default": 5.0
+        },
+        {
+          "key": "TEMPS_EXPO_CIBLE",
+          "label": "Temps expo cible",
+          "unit": "ms",
+          "default": 2.0
+        },
+        {
+          "key": "FACTEUR_MARGE",
+          "label": "Facteur marge",
+          "unit": "-",
+          "default": 1.3
+        }
+      ]
+    },
+    {
+      "id": "VIS_15",
+      "domain": "👁️ Vision industrielle",
+      "name": "DOF approx. (mm)",
+      "sheet": "VIS_15_DOFApprox",
+      "notes": "Approx macro (guide).",
+      "inputs": [
+        {
+          "key": "N_F",
+          "label": "N (F#)",
+          "unit": "-",
+          "default": 8.0
+        },
+        {
+          "key": "CERCLE_CONFUSION_C",
+          "label": "Cercle confusion c",
+          "unit": "mm",
+          "default": 0.02
+        },
+        {
+          "key": "GRANDISSEMENT_M",
+          "label": "Grandissement M",
+          "unit": "-",
+          "default": 0.05
+        }
+      ]
+    },
+    {
+      "id": "VIS_16",
+      "domain": "👁️ Vision industrielle",
+      "name": "SNR cible vs contraste (guide)",
+      "sheet": "VIS_16_SNR",
+      "notes": "SNR >10 recommandé pour robustesse.",
+      "inputs": [
+        {
+          "key": "CONTRASTE",
+          "label": "Contraste (%)",
+          "unit": "%",
+          "default": 20.0
+        },
+        {
+          "key": "BRUIT",
+          "label": "Bruit (%)",
+          "unit": "%",
+          "default": 2.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_17",
+      "domain": "👁️ Vision industrielle",
+      "name": "Dimension module 2D (mm)",
+      "sheet": "VIS_17_Barcode",
+      "notes": "Cible : ≥4 px/module (DataMatrix).",
+      "inputs": [
+        {
+          "key": "TAILLE_MODULE",
+          "label": "Taille module",
+          "unit": "mm",
+          "default": 0.4
+        },
+        {
+          "key": "M_PX",
+          "label": "µm/px",
+          "unit": "µm/px",
+          "default": 120.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_18",
+      "domain": "👁️ Vision industrielle",
+      "name": "Tolérance profondeur vs DOF",
+      "sheet": "VIS_18_DepthTol",
+      "notes": "Si marge <0 : revoir DOF/optique.",
+      "inputs": [
+        {
+          "key": "DOF",
+          "label": "DOF",
+          "unit": "mm",
+          "default": 10.0
+        },
+        {
+          "key": "VARIATION_Z_R_ELLE",
+          "label": "Variation Z réelle",
+          "unit": "mm",
+          "default": 8.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_21",
+      "domain": "👁️ Vision industrielle",
+      "name": "Focale requise (mm)",
+      "sheet": "VIS_21_Focale",
+      "notes": "Pré-dimensionnement focale.",
+      "inputs": [
+        {
+          "key": "WD",
+          "label": "WD",
+          "unit": "mm",
+          "default": 600.0
+        },
+        {
+          "key": "CAPTEUR",
+          "label": "Capteur",
+          "unit": "mm",
+          "default": 7.2
+        },
+        {
+          "key": "FOV",
+          "label": "FOV",
+          "unit": "mm",
+          "default": 200.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_22",
+      "domain": "👁️ Vision industrielle",
+      "name": "Ouverture F# vs DOF",
+      "sheet": "VIS_22_Fnumber",
+      "notes": "Guide ouverture.",
+      "inputs": [
+        {
+          "key": "DOF_CIBLE",
+          "label": "DOF cible",
+          "unit": "mm",
+          "default": 10.0
+        },
+        {
+          "key": "GRANDISSEMENT_M",
+          "label": "Grandissement M",
+          "unit": "-",
+          "default": 0.05
+        }
+      ]
+    },
+    {
+      "id": "VIS_23",
+      "domain": "👁️ Vision industrielle",
+      "name": "Énergie flash strobe",
+      "sheet": "VIS_23_EnergieStrobe",
+      "notes": "Synchronisation rapide.",
+      "inputs": [
+        {
+          "key": "PUISSANCE_LED",
+          "label": "Puissance LED",
+          "unit": "W",
+          "default": 20.0
+        },
+        {
+          "key": "TEMPS_FLASH",
+          "label": "Temps flash",
+          "unit": "ms",
+          "default": 0.5
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.7
+        }
+      ]
+    },
+    {
+      "id": "VIS_24",
+      "domain": "👁️ Vision industrielle",
+      "name": "Angle éclairage recommandé",
+      "sheet": "VIS_24_Angle",
+      "notes": "Anti-reflets.",
+      "inputs": [
+        {
+          "key": "HAUTEUR",
+          "label": "Hauteur",
+          "unit": "mm",
+          "default": 300.0
+        },
+        {
+          "key": "D_CALAGE",
+          "label": "Décalage",
+          "unit": "mm",
+          "default": 150.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_25",
+      "domain": "👁️ Vision industrielle",
+      "name": "Distorsion rolling shutter (mm)",
+      "sheet": "VIS_25_RollingDist",
+      "notes": "Si KO : global shutter ou strobe plus court.",
+      "inputs": [
+        {
+          "key": "VITESSE_PI_CE",
+          "label": "Vitesse pièce",
+          "unit": "m/s",
+          "default": 0.5
+        },
+        {
+          "key": "TEMPS_LECTURE_CAPTEUR",
+          "label": "Temps lecture capteur",
+          "unit": "ms",
+          "default": 10.0
+        },
+        {
+          "key": "DIRECTION",
+          "label": "Direction",
+          "unit": "-",
+          "default": 1.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_26",
+      "domain": "👁️ Vision industrielle",
+      "name": "Erreur perspective (non télécentrique)",
+      "sheet": "VIS_26_Perspective",
+      "notes": "Si KO : télécentrique / augmenter WD / réduire FOV.",
+      "inputs": [
+        {
+          "key": "Z_VARIATION_HAUTEUR",
+          "label": "ΔZ (variation hauteur)",
+          "unit": "mm",
+          "default": 5.0
+        },
+        {
+          "key": "WD",
+          "label": "WD",
+          "unit": "mm",
+          "default": 600.0
+        },
+        {
+          "key": "FOV",
+          "label": "FOV",
+          "unit": "mm",
+          "default": 200.0
+        }
+      ]
+    },
+    {
+      "id": "VIS_27",
+      "domain": "👁️ Vision industrielle",
+      "name": "Puissance crête strobe (W)",
+      "sheet": "VIS_27_StrobePeak",
+      "notes": "Vérifie specs strobe/driver/LED.",
+      "inputs": [
+        {
+          "key": "PUISSANCE_MOYENNE_DISPO",
+          "label": "Puissance moyenne dispo",
+          "unit": "W",
+          "default": 10.0
+        },
+        {
+          "key": "DUTY_CYCLE",
+          "label": "Duty cycle",
+          "unit": "-",
+          "default": 0.01
+        },
+        {
+          "key": "MARGE",
+          "label": "Marge",
+          "unit": "-",
+          "default": 1.3
+        }
+      ]
+    },
+    {
+      "id": "VIS_28",
+      "domain": "👁️ Vision industrielle",
+      "name": "Limite diffraction (Airy vs pixel)",
+      "sheet": "VIS_28_Diffraction",
+      "notes": "Si KO : ouvrir (plus petit F#) ou pixel plus grand.",
+      "inputs": [
+        {
+          "key": "INP_1",
+          "label": "λ",
+          "unit": "µm",
+          "default": 0.55
+        },
+        {
+          "key": "F",
+          "label": "F#",
+          "unit": "-",
+          "default": 8.0
+        },
+        {
+          "key": "PIXEL_CAPTEUR",
+          "label": "Pixel capteur",
+          "unit": "µm",
+          "default": 3.45
+        }
+      ]
+    },
+    {
+      "id": "ELEC_01",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Bilan de puissance armoire",
+      "sheet": "ELEC_01_BilanP",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TENSION_R_SEAU_VLL",
+          "label": "Tension réseau VLL",
+          "unit": "V",
+          "default": 400
+        },
+        {
+          "key": "FACTEUR_DE_FOISONNEMENT",
+          "label": "Facteur de foisonnement",
+          "unit": "-",
+          "default": 0.8
+        },
+        {
+          "key": "COS_AUTO",
+          "label": "cosφ (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$11"
+        },
+        {
+          "key": "AUTO",
+          "label": "η (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$12"
+        },
+        {
+          "key": "LISTE_CHARGES_JUSQU_10_KW_ET_FAC",
+          "label": "Liste charges (jusqu’à 10) — kW et facteur d’utilisation",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "ELEC_02",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Courant nominal / démarrage moteur",
+      "sheet": "ELEC_02_Courants",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PUISSANCE_MOTEUR",
+          "label": "Puissance moteur",
+          "unit": "kW",
+          "default": 11
+        },
+        {
+          "key": "TENSION_VLL",
+          "label": "Tension VLL",
+          "unit": "V",
+          "default": 400
+        },
+        {
+          "key": "COS_AUTO",
+          "label": "cosφ (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$11"
+        },
+        {
+          "key": "AUTO",
+          "label": "η (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$12"
+        },
+        {
+          "key": "FACTEUR_D_MARRAGE",
+          "label": "Facteur démarrage",
+          "unit": "-",
+          "default": 6
+        }
+      ]
+    },
+    {
+      "id": "ELEC_03",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Choix disjoncteurs (calibre + Icu)",
+      "sheet": "ELEC_03_Disjoncteur",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COURANT_CHARGE_IN",
+          "label": "Courant charge In",
+          "unit": "A",
+          "default": 38
+        },
+        {
+          "key": "CALIBRE_DISJONCTEUR_CHOISI",
+          "label": "Calibre disjoncteur choisi",
+          "unit": "A",
+          "default": 50
+        },
+        {
+          "key": "ICC_PR_SUM_COURT_CIRCUIT",
+          "label": "Icc présumé (court-circuit)",
+          "unit": "kA",
+          "default": 10
+        },
+        {
+          "key": "POUVOIR_DE_COUPURE_ICU",
+          "label": "Pouvoir de coupure Icu",
+          "unit": "kA",
+          "default": 25
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "ELEC_04",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Section de câble (pré-dimensionnement)",
+      "sheet": "ELEC_04_CableSection",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COURANT",
+          "label": "Courant",
+          "unit": "A",
+          "default": 45
+        },
+        {
+          "key": "DENSIT_ADMISSIBLE_J",
+          "label": "Densité admissible J",
+          "unit": "A/mm²",
+          "default": 6
+        },
+        {
+          "key": "FACTEURS_CORRECTION",
+          "label": "Facteurs correction",
+          "unit": "-",
+          "default": 0.8
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "ELEC_05",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Chute de tension (ΔU)",
+      "sheet": "ELEC_05_DeltaU",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "SYST_ME_1_1PH_2_3PH",
+          "label": "Système (1=1ph/2=3ph)",
+          "unit": "-",
+          "default": 2
+        },
+        {
+          "key": "TENSION_NOMINALE",
+          "label": "Tension nominale",
+          "unit": "V",
+          "default": 400
+        },
+        {
+          "key": "COURANT",
+          "label": "Courant",
+          "unit": "A",
+          "default": 45
+        },
+        {
+          "key": "LONGUEUR_C_BLE",
+          "label": "Longueur câble",
+          "unit": "m",
+          "default": 40
+        },
+        {
+          "key": "SECTION_C_BLE",
+          "label": "Section câble",
+          "unit": "mm²",
+          "default": 10
+        },
+        {
+          "key": "CUIVRE_AUTO",
+          "label": "ρ cuivre (auto)",
+          "unit": "Ω·mm²/m",
+          "default": "='01_PARAM'!$E$15"
+        }
+      ]
+    },
+    {
+      "id": "ELEC_06",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Dissipation thermique armoire",
+      "sheet": "ELEC_06_Thermique",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PERTES_W",
+          "label": "Pertes (W)",
+          "unit": "W",
+          "default": 650
+        },
+        {
+          "key": "R_SISTANCE_THERMIQUE_RTH",
+          "label": "Résistance thermique Rth",
+          "unit": "K/W",
+          "default": 0.08
+        },
+        {
+          "key": "TEMP_RATURE_AMBIANTE",
+          "label": "Température ambiante",
+          "unit": "°C",
+          "default": 35
+        },
+        {
+          "key": "T_MAX_AUTO",
+          "label": "ΔT max (auto)",
+          "unit": "K",
+          "default": "='01_PARAM'!$E$13"
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "ELEC_07",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Calcul UPS / secours",
+      "sheet": "ELEC_07_UPS",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGE_CRITIQUE",
+          "label": "Charge critique",
+          "unit": "W",
+          "default": 1200
+        },
+        {
+          "key": "AUTONOMIE_DEMAND_E",
+          "label": "Autonomie demandée",
+          "unit": "min",
+          "default": 15
+        },
+        {
+          "key": "RENDEMENT_UPS",
+          "label": "Rendement UPS",
+          "unit": "-",
+          "default": 0.9
+        },
+        {
+          "key": "TENSION_BATTERIE",
+          "label": "Tension batterie",
+          "unit": "V",
+          "default": 48
+        },
+        {
+          "key": "PROFONDEUR_D_CHARGE_DOD",
+          "label": "Profondeur décharge (DoD)",
+          "unit": "-",
+          "default": 0.8
+        }
+      ]
+    },
+    {
+      "id": "ELEC_08",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Courant démarrage moteur",
+      "sheet": "ELEC_08_Istart",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COURANT_NOMINAL_IN",
+          "label": "Courant nominal In",
+          "unit": "A",
+          "default": 10.0
+        },
+        {
+          "key": "FACTEUR_D_MARRAGE",
+          "label": "Facteur démarrage",
+          "unit": "-",
+          "default": 6.0
+        }
+      ]
+    },
+    {
+      "id": "ELEC_09",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Simultanéité / puissance appelée",
+      "sheet": "ELEC_09_Simult",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "P_INSTALL_E",
+          "label": "P installée",
+          "unit": "kW",
+          "default": 50.0
+        },
+        {
+          "key": "COEF_SIMULTAN_IT",
+          "label": "Coef simultanéité",
+          "unit": "-",
+          "default": 0.7
+        }
+      ]
+    },
+    {
+      "id": "ELEC_10",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Choix contacteur (AC3)",
+      "sheet": "ELEC_10_Contact",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COURANT_IN",
+          "label": "Courant In",
+          "unit": "A",
+          "default": 20.0
+        },
+        {
+          "key": "MARGE",
+          "label": "Marge",
+          "unit": "-",
+          "default": 1.2
+        }
+      ]
+    },
+    {
+      "id": "ELEC_11",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Réglage relais thermique",
+      "sheet": "ELEC_11_Therm",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COURANT_MOTEUR_IN",
+          "label": "Courant moteur In",
+          "unit": "A",
+          "default": 20.0
+        },
+        {
+          "key": "COEF_R_GLAGE",
+          "label": "Coef réglage",
+          "unit": "-",
+          "default": 1.0
+        }
+      ]
+    },
+    {
+      "id": "ELEC_12",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Pouvoir de coupure mini (Icu)",
+      "sheet": "ELEC_12_Icu",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "ICC_PR_SUM",
+          "label": "Icc présumé",
+          "unit": "kA",
+          "default": 10.0
+        },
+        {
+          "key": "MARGE",
+          "label": "Marge",
+          "unit": "-",
+          "default": 1.3
+        }
+      ]
+    },
+    {
+      "id": "ELEC_13",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Sélectivité (indicatif)",
+      "sheet": "ELEC_13_Select",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CALIBRE_AVAL",
+          "label": "Calibre aval",
+          "unit": "A",
+          "default": 32.0
+        },
+        {
+          "key": "CALIBRE_AMONT",
+          "label": "Calibre amont",
+          "unit": "A",
+          "default": 63.0
+        }
+      ]
+    },
+    {
+      "id": "ELEC_14",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Consommation annuelle",
+      "sheet": "ELEC_14_kWh",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PUISSANCE_MOYENNE",
+          "label": "Puissance moyenne",
+          "unit": "kW",
+          "default": 10.0
+        },
+        {
+          "key": "HEURES_AN",
+          "label": "Heures/an",
+          "unit": "h",
+          "default": 2000.0
+        }
+      ]
+    },
+    {
+      "id": "ELEC_15",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Coût énergie annuel",
+      "sheet": "ELEC_15_Cost",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "NERGIE_ANNUELLE",
+          "label": "Énergie annuelle",
+          "unit": "kWh",
+          "default": 20000.0
+        },
+        {
+          "key": "PRIX_KWH",
+          "label": "Prix kWh",
+          "unit": "€/kWh",
+          "default": 0.18
+        }
+      ]
+    },
+    {
+      "id": "ELEC_16",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Dimensionnement transformateur",
+      "sheet": "ELEC_16_Transfo",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PUISSANCE_APPEL_E",
+          "label": "Puissance appelée",
+          "unit": "kW",
+          "default": 50.0
+        },
+        {
+          "key": "COS",
+          "label": "Cos φ",
+          "unit": "-",
+          "default": 0.9
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.98
+        }
+      ]
+    },
+    {
+      "id": "ELEC_17",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Intensité moteur monophasé",
+      "sheet": "ELEC_17_Imono",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PUISSANCE_P",
+          "label": "Puissance P",
+          "unit": "kW",
+          "default": 2.2
+        },
+        {
+          "key": "TENSION_U",
+          "label": "Tension U",
+          "unit": "V",
+          "default": 230.0
+        },
+        {
+          "key": "COS",
+          "label": "Cos φ",
+          "unit": "-",
+          "default": 0.85
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.9
+        }
+      ]
+    },
+    {
+      "id": "ELEC_19",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Puissance apparente (kVA)",
+      "sheet": "ELEC_19_kVA",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PUISSANCE_ACTIVE_P",
+          "label": "Puissance active P",
+          "unit": "kW",
+          "default": 15.0
+        },
+        {
+          "key": "COS",
+          "label": "Cos φ",
+          "unit": "-",
+          "default": 0.85
+        }
+      ]
+    },
+    {
+      "id": "ELEC_20",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Facteur de puissance global",
+      "sheet": "ELEC_20_PFglobal",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "P_TOTAL",
+          "label": "P total",
+          "unit": "kW",
+          "default": 15.0
+        },
+        {
+          "key": "S_TOTAL",
+          "label": "S total",
+          "unit": "kVA",
+          "default": 18.0
+        }
+      ]
+    },
+    {
+      "id": "ELEC_23",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Ventilation armoire (débit)",
+      "sheet": "ELEC_23_VentArmoire",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PERTES",
+          "label": "Pertes",
+          "unit": "W",
+          "default": 600.0
+        },
+        {
+          "key": "T_ADMISSIBLE",
+          "label": "ΔT admissible",
+          "unit": "°C",
+          "default": 10.0
+        }
+      ]
+    },
+    {
+      "id": "ELEC_24",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Courant neutre (harmoniques, approx.)",
+      "sheet": "ELEC_24_Neutre",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COURANT_PHASE_I",
+          "label": "Courant phase I",
+          "unit": "A",
+          "default": 50.0
+        },
+        {
+          "key": "COEF_HARMONIQUES",
+          "label": "Coef harmoniques",
+          "unit": "-",
+          "default": 0.3
+        }
+      ]
+    },
+    {
+      "id": "ELEC_25",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Harmoniques THDi (approx.)",
+      "sheet": "ELEC_25_Harm",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "I1_FONDAMENTAL",
+          "label": "I1 fondamental",
+          "unit": "A",
+          "default": 50.0
+        },
+        {
+          "key": "IH_RMS",
+          "label": "Ih (RMS)",
+          "unit": "A",
+          "default": 15.0
+        }
+      ]
+    },
+    {
+      "id": "ELEC_27",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Chute de tension tri (simpl.)",
+      "sheet": "ELEC_27_ChuteTri",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COURANT_I",
+          "label": "Courant I",
+          "unit": "A",
+          "default": 25.0
+        },
+        {
+          "key": "LONGUEUR_ALLER",
+          "label": "Longueur aller",
+          "unit": "m",
+          "default": 50.0
+        },
+        {
+          "key": "SECTION_S",
+          "label": "Section S",
+          "unit": "mm²",
+          "default": 6.0
+        },
+        {
+          "key": "TENSION_U",
+          "label": "Tension U",
+          "unit": "V",
+          "default": 400.0
+        }
+      ]
+    },
+    {
+      "id": "ELEC_29",
+      "domain": "⚡ Électricité industrielle",
+      "name": "Icc (approx. simplifiée)",
+      "sheet": "ELEC_29_Icc",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TENSION_U",
+          "label": "Tension U",
+          "unit": "V",
+          "default": 400.0
+        },
+        {
+          "key": "IMP_DANCE_Z",
+          "label": "Impédance Z",
+          "unit": "Ω",
+          "default": 0.05
+        }
+      ]
+    },
+    {
+      "id": "SOUD_01",
+      "domain": "🔥 Soudure",
+      "name": "Puissance poste de soudure",
+      "sheet": "SOUD_01_Puissance",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "INTENSIT",
+          "label": "Intensité",
+          "unit": "A",
+          "default": 9000
+        },
+        {
+          "key": "TENSION",
+          "label": "Tension",
+          "unit": "V",
+          "default": 12
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.85
+        },
+        {
+          "key": "FACTEUR_DE_PUISSANCE",
+          "label": "Facteur de puissance",
+          "unit": "-",
+          "default": 0.9
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "SOUD_02",
+      "domain": "🔥 Soudure",
+      "name": "Calcul intensité / tension (énergie point)",
+      "sheet": "SOUD_02_EnergiePoint",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "NERGIE_PAR_POINT",
+          "label": "Énergie par point",
+          "unit": "J",
+          "default": 3500
+        },
+        {
+          "key": "TENSION_SECONDAIRE",
+          "label": "Tension secondaire",
+          "unit": "V",
+          "default": 10
+        },
+        {
+          "key": "TEMPS_SOUDURE",
+          "label": "Temps soudure",
+          "unit": "ms",
+          "default": 180
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.85
+        },
+        {
+          "key": "I_MAX_POSTE",
+          "label": "I max poste",
+          "unit": "A",
+          "default": 12000
+        }
+      ]
+    },
+    {
+      "id": "SOUD_03",
+      "domain": "🔥 Soudure",
+      "name": "Temps de soudure (empirique)",
+      "sheet": "SOUD_03_Temps",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PAISSEUR_TOTALE_SOUDER",
+          "label": "Épaisseur totale à souder",
+          "unit": "mm",
+          "default": 2
+        },
+        {
+          "key": "CONSTANTE_PROC_D",
+          "label": "Constante procédé",
+          "unit": "ms/mm",
+          "default": 80
+        },
+        {
+          "key": "TEMPS_MINI",
+          "label": "Temps mini",
+          "unit": "ms",
           "default": 120
         },
         {
-          "key": "DIAM",
-          "label": "Diamètre",
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "SOUD_04",
+      "domain": "🔥 Soudure",
+      "name": "Consommation énergétique",
+      "sheet": "SOUD_04_Conso",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PUISSANCE_ACTIVE",
+          "label": "Puissance active",
+          "unit": "kW",
+          "default": 85
+        },
+        {
+          "key": "TEMPS_SOUDURE_PAR_POINT",
+          "label": "Temps soudure par point",
+          "unit": "s",
+          "default": 0.18
+        },
+        {
+          "key": "NOMBRE_DE_POINTS_H",
+          "label": "Nombre de points / h",
+          "unit": "-",
+          "default": 1800
+        },
+        {
+          "key": "FACTEUR_DE_MARCHE",
+          "label": "Facteur de marche",
+          "unit": "-",
+          "default": 0.35
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "SOUD_05",
+      "domain": "🔥 Soudure",
+      "name": "Effort de serrage pinces",
+      "sheet": "SOUD_05_Serrage",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PRESSION_AIR",
+          "label": "Pression air",
+          "unit": "bar",
+          "default": 6
+        },
+        {
+          "key": "DIAM_TRE_V_RIN",
+          "label": "Diamètre vérin",
           "unit": "mm",
+          "default": 80
+        },
+        {
+          "key": "RAPPORT_DE_LEVIER",
+          "label": "Rapport de levier",
+          "unit": "-",
+          "default": 1.6
+        },
+        {
+          "key": "FORCE_REQUISE",
+          "label": "Force requise",
+          "unit": "N",
+          "default": 3500
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "SOUD_06",
+      "domain": "🔥 Soudure",
+      "name": "Vérification électrodes (densité de courant)",
+      "sheet": "SOUD_06_Electrodes",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COURANT_SOUDURE",
+          "label": "Courant soudure",
+          "unit": "A",
+          "default": 9000
+        },
+        {
+          "key": "DIAM_TRE_POINTE_LECTRODE",
+          "label": "Diamètre pointe électrode",
+          "unit": "mm",
+          "default": 6
+        },
+        {
+          "key": "J_MAX_RECOMMAND",
+          "label": "J max recommandé",
+          "unit": "A/mm²",
+          "default": 350
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "SOU_01",
+      "domain": "🔥 Soudure",
+      "name": "Puissance poste soudure (approx.)",
+      "sheet": "SOU_01_Puissance",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TENSION_U",
+          "label": "Tension U",
+          "unit": "V",
+          "default": 20.0
+        },
+        {
+          "key": "COURANT_I",
+          "label": "Courant I",
+          "unit": "A",
+          "default": 200.0
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.8
+        }
+      ]
+    },
+    {
+      "id": "SOU_02",
+      "domain": "🔥 Soudure",
+      "name": "Intensité / tension (résistance)",
+      "sheet": "SOU_02_IU",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PUISSANCE_POSTE",
+          "label": "Puissance poste",
+          "unit": "kVA",
+          "default": 60.0
+        },
+        {
+          "key": "TENSION_SECONDAIRE",
+          "label": "Tension secondaire",
+          "unit": "V",
+          "default": 12.0
+        }
+      ]
+    },
+    {
+      "id": "SOU_03",
+      "domain": "🔥 Soudure",
+      "name": "Temps de soudure (points / cadence)",
+      "sheet": "SOU_03_Temps",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "NB_POINTS",
+          "label": "Nb points",
+          "unit": "-",
+          "default": 20.0
+        },
+        {
+          "key": "TEMPS_PAR_POINT",
+          "label": "Temps par point",
+          "unit": "ms",
+          "default": 250.0
+        },
+        {
+          "key": "TEMPS_TRANSFERT",
+          "label": "Temps transfert",
+          "unit": "s",
+          "default": 2.0
+        }
+      ]
+    },
+    {
+      "id": "SOU_04",
+      "domain": "🔥 Soudure",
+      "name": "Énergie de soudage (résistance)",
+      "sheet": "SOU_04_Energie",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COURANT_I",
+          "label": "Courant I",
+          "unit": "kA",
+          "default": 12.0
+        },
+        {
+          "key": "R_SISTANCE_R",
+          "label": "Résistance R",
+          "unit": "mΩ",
+          "default": 0.2
+        },
+        {
+          "key": "TEMPS_T",
+          "label": "Temps t",
+          "unit": "ms",
+          "default": 200.0
+        }
+      ]
+    },
+    {
+      "id": "SOU_07",
+      "domain": "🔥 Soudure",
+      "name": "Consommation énergétique soudure (kWh)",
+      "sheet": "SOU_07_Conso",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PUISSANCE_MOYENNE",
+          "label": "Puissance moyenne",
+          "unit": "kW",
+          "default": 20.0
+        },
+        {
+          "key": "TEMPS_SOUDURE",
+          "label": "Temps soudure",
+          "unit": "s",
+          "default": 30.0
+        }
+      ]
+    },
+    {
+      "id": "SOU_08",
+      "domain": "🔥 Soudure",
+      "name": "Dimensionnement transfo soudure (kVA)",
+      "sheet": "SOU_08_Transfo",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COURANT_I",
+          "label": "Courant I",
+          "unit": "kA",
+          "default": 12.0
+        },
+        {
+          "key": "TENSION_U",
+          "label": "Tension U",
+          "unit": "V",
+          "default": 10.0
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.8
+        }
+      ]
+    },
+    {
+      "id": "SOU_09",
+      "domain": "🔥 Soudure",
+      "name": "Courant crête admissible (approx.)",
+      "sheet": "SOU_09_Icre",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "COURANT_RMS",
+          "label": "Courant RMS",
+          "unit": "kA",
+          "default": 12.0
+        },
+        {
+          "key": "FACTEUR_CR_TE",
+          "label": "Facteur crête",
+          "unit": "-",
+          "default": 1.4
+        }
+      ]
+    },
+    {
+      "id": "SOU_10",
+      "domain": "🔥 Soudure",
+      "name": "Puissance arc (MIG/TIG)",
+      "sheet": "SOU_10_PuissArc",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TENSION_U",
+          "label": "Tension U",
+          "unit": "V",
+          "default": 22.0
+        },
+        {
+          "key": "COURANT_I",
+          "label": "Courant I",
+          "unit": "A",
+          "default": 180.0
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.85
+        }
+      ]
+    },
+    {
+      "id": "SOU_11",
+      "domain": "🔥 Soudure",
+      "name": "Débit gaz protection (MIG/TIG)",
+      "sheet": "SOU_11_Gaz",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "DIAM_TRE_BUSE",
+          "label": "Diamètre buse",
+          "unit": "mm",
+          "default": 16.0
+        },
+        {
+          "key": "VITESSE_GAZ",
+          "label": "Vitesse gaz",
+          "unit": "m/s",
+          "default": 10.0
+        }
+      ]
+    },
+    {
+      "id": "SOU_12",
+      "domain": "🔥 Soudure",
+      "name": "Vitesse avance fil (approx.)",
+      "sheet": "SOU_12_Fil",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "D_BIT_D_P_T",
+          "label": "Débit dépôt",
+          "unit": "kg/h",
+          "default": 3.0
+        },
+        {
+          "key": "MASSE_LIN_IQUE_FIL",
+          "label": "Masse linéique fil",
+          "unit": "kg/m",
+          "default": 0.006
+        }
+      ]
+    },
+    {
+      "id": "SOU_13",
+      "domain": "🔥 Soudure",
+      "name": "Apport thermique (kJ/mm)",
+      "sheet": "SOU_13_Apport",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TENSION_U",
+          "label": "Tension U",
+          "unit": "V",
+          "default": 20.0
+        },
+        {
+          "key": "COURANT_I",
+          "label": "Courant I",
+          "unit": "A",
+          "default": 200.0
+        },
+        {
+          "key": "VITESSE_AVANCE",
+          "label": "Vitesse avance",
+          "unit": "mm/s",
+          "default": 6.0
+        }
+      ]
+    },
+    {
+      "id": "SOU_14",
+      "domain": "🔥 Soudure",
+      "name": "Consommation gaz (m³)",
+      "sheet": "SOU_14_ConsoGaz",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "D_BIT_GAZ",
+          "label": "Débit gaz",
+          "unit": "L/min",
+          "default": 12.0
+        },
+        {
+          "key": "TEMPS",
+          "label": "Temps",
+          "unit": "min",
+          "default": 30.0
+        }
+      ]
+    },
+    {
+      "id": "SOU_15",
+      "domain": "🔥 Soudure",
+      "name": "Effort serrage pinces (par levier)",
+      "sheet": "SOU_15_Serrage",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "FORCE_V_RIN",
+          "label": "Force vérin",
+          "unit": "N",
+          "default": 3000.0
+        },
+        {
+          "key": "RAPPORT_M_CANIQUE",
+          "label": "Rapport mécanique",
+          "unit": "-",
+          "default": 1.6
+        }
+      ]
+    },
+    {
+      "id": "SOU_16",
+      "domain": "🔥 Soudure",
+      "name": "Duty cycle (cycle utile)",
+      "sheet": "SOU_16_Duty",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TEMPS_SOUDURE",
+          "label": "Temps soudure",
+          "unit": "s",
+          "default": 2.0
+        },
+        {
+          "key": "TEMPS_CYCLE",
+          "label": "Temps cycle",
+          "unit": "s",
+          "default": 10.0
+        }
+      ]
+    },
+    {
+      "id": "PEINT_01",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Débit peinture / consommation",
+      "sheet": "PEINT_01_Debit",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "SURFACE_PEINDRE",
+          "label": "Surface à peindre",
+          "unit": "m²",
+          "default": 6.5
+        },
+        {
+          "key": "PAISSEUR_FILM_SEC",
+          "label": "Épaisseur film sec",
+          "unit": "µm",
+          "default": 60
+        },
+        {
+          "key": "EXTRAIT_SEC_SOLIDS",
+          "label": "Extrait sec (solids)",
+          "unit": "-",
+          "default": 0.55
+        },
+        {
+          "key": "RENDEMENT_TRANSFERT",
+          "label": "Rendement transfert",
+          "unit": "-",
+          "default": 0.7
+        },
+        {
+          "key": "DENSIT_PEINTURE",
+          "label": "Densité peinture",
+          "unit": "kg/L",
+          "default": 1.2
+        }
+      ]
+    },
+    {
+      "id": "PEINT_02",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Temps de cycle cabine",
+      "sheet": "PEINT_02_CycleCabine",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGEMENT",
+          "label": "Chargement",
+          "unit": "s",
+          "default": 60
+        },
+        {
+          "key": "APPLICATION_PEINTURE",
+          "label": "Application peinture",
+          "unit": "s",
+          "default": 180
+        },
+        {
+          "key": "FLASH_OFF",
+          "label": "Flash-off",
+          "unit": "s",
+          "default": 120
+        },
+        {
+          "key": "S_CHAGE_TUVE",
+          "label": "Séchage / étuve",
+          "unit": "s",
+          "default": 900
+        },
+        {
+          "key": "D_CHARGEMENT",
+          "label": "Déchargement",
+          "unit": "s",
+          "default": 60
+        }
+      ]
+    },
+    {
+      "id": "PEINT_03",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Consommation air comprimé (application)",
+      "sheet": "PEINT_03_Air",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "NOMBRE_DE_PISTOLETS",
+          "label": "Nombre de pistolets",
+          "unit": "-",
+          "default": 2
+        },
+        {
+          "key": "CONSO_PAR_PISTOLET",
+          "label": "Conso par pistolet",
+          "unit": "Nm³/h",
+          "default": 18
+        },
+        {
+          "key": "FACTEUR_UTILISATION",
+          "label": "Facteur utilisation",
+          "unit": "-",
+          "default": 0.6
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "PEINT_04",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Dimensionnement ventilation (renouvellements)",
+      "sheet": "PEINT_04_Ventil",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "VOLUME_CABINE",
+          "label": "Volume cabine",
+          "unit": "m³",
+          "default": 220
+        },
+        {
+          "key": "RENOUVELLEMENTS_D_AIR",
+          "label": "Renouvellements d'air",
+          "unit": "1/h",
+          "default": 80
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        },
+        {
+          "key": "D_BIT_VENTILATION",
+          "label": "Débit ventilation",
+          "unit": "m³/h",
+          "default": "=B7*B8"
+        }
+      ]
+    },
+    {
+      "id": "PEINT_05",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Débit extraction (vitesse frontale)",
+      "sheet": "PEINT_05_Extraction",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "SURFACE_OUVERTURE",
+          "label": "Surface ouverture",
+          "unit": "m²",
+          "default": 4
+        },
+        {
+          "key": "VITESSE_FRONTALE",
+          "label": "Vitesse frontale",
+          "unit": "m/s",
+          "default": 0.5
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        },
+        {
+          "key": "D_BIT_EXTRACTION",
+          "label": "Débit extraction",
+          "unit": "m³/h",
+          "default": "=B7*B8*3600"
+        }
+      ]
+    },
+    {
+      "id": "PEINT_06",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Temps de séchage (loi empirique)",
+      "sheet": "PEINT_06_Sechage",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TEMPS_R_F_RENCE",
+          "label": "Temps référence",
+          "unit": "min",
           "default": 30
+        },
+        {
+          "key": "TEMP_RATURE_R_F_RENCE",
+          "label": "Température référence",
+          "unit": "°C",
+          "default": 80
+        },
+        {
+          "key": "TEMP_RATURE_R_ELLE",
+          "label": "Température réelle",
+          "unit": "°C",
+          "default": 70
+        },
+        {
+          "key": "CONSTANTE_K",
+          "label": "Constante k",
+          "unit": "°C",
+          "default": 18
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "PEINT_07",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Bilan énergétique cabine (chauffage air)",
+      "sheet": "PEINT_07_Energie",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "D_BIT_AIR",
+          "label": "Débit air",
+          "unit": "m³/h",
+          "default": 18000
+        },
+        {
+          "key": "T_CHAUFFAGE",
+          "label": "ΔT chauffage",
+          "unit": "K",
+          "default": 35
+        },
+        {
+          "key": "RENDEMENT_CHAUFFAGE",
+          "label": "Rendement chauffage",
+          "unit": "-",
+          "default": 0.85
+        },
+        {
+          "key": "AIR",
+          "label": "ρ air",
+          "unit": "kg/m³",
+          "default": 1.2
+        },
+        {
+          "key": "CP_AIR",
+          "label": "Cp air",
+          "unit": "kJ/kg/K",
+          "default": 1.005
+        }
+      ]
+    },
+    {
+      "id": "PEINT_08",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Épaisseur film sec",
+      "sheet": "PEINT_08_Epaisseur",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "D_POT_HUMIDE",
+          "label": "Dépot humide",
+          "unit": "µm",
+          "default": 120.0
+        },
+        {
+          "key": "EXTRAIT_SEC",
+          "label": "Extrait sec",
+          "unit": "-",
+          "default": 0.55
+        }
+      ]
+    },
+    {
+      "id": "PEINT_11",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Temps flash-off (approx.)",
+      "sheet": "PEINT_11_FlashOff",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PAISSEUR_HUMIDE",
+          "label": "Épaisseur humide",
+          "unit": "µm",
+          "default": 120.0
+        },
+        {
+          "key": "TEMP_RATURE",
+          "label": "Température",
+          "unit": "°C",
+          "default": 20.0
+        },
+        {
+          "key": "COEF_SOLVANT",
+          "label": "Coef solvant",
+          "unit": "-",
+          "default": 1.0
+        }
+      ]
+    },
+    {
+      "id": "PEINT_14",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Bilan thermique cabine/four (kW)",
+      "sheet": "PEINT_14_BilanTherm",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "D_BIT_AIR",
+          "label": "Débit air",
+          "unit": "m³/h",
+          "default": 5000.0
+        },
+        {
+          "key": "T",
+          "label": "ΔT",
+          "unit": "°C",
+          "default": 30.0
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.75
+        }
+      ]
+    },
+    {
+      "id": "PEINT_15",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Coût énergie cabine/four",
+      "sheet": "PEINT_15_CoutEnergie",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PUISSANCE",
+          "label": "Puissance",
+          "unit": "kW",
+          "default": 120.0
+        },
+        {
+          "key": "HEURES_AN",
+          "label": "Heures/an",
+          "unit": "h",
+          "default": 2000.0
+        },
+        {
+          "key": "PRIX_KWH",
+          "label": "Prix kWh",
+          "unit": "€/kWh",
+          "default": 0.18
+        }
+      ]
+    },
+    {
+      "id": "PEINT_16",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Débit extraction (renouvellement)",
+      "sheet": "PEINT_16_Extraction",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "VOLUME_ZONE",
+          "label": "Volume zone",
+          "unit": "m³",
+          "default": 200.0
+        },
+        {
+          "key": "RENOUVEL_H",
+          "label": "Renouvel./h",
+          "unit": "1/h",
+          "default": 60.0
+        }
+      ]
+    },
+    {
+      "id": "PEINT_17",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Conso air comprimé (pistolets)",
+      "sheet": "PEINT_17_AirComp",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "D_BIT_PAR_PISTOLET",
+          "label": "Débit par pistolet",
+          "unit": "Nl/min",
+          "default": 350.0
+        },
+        {
+          "key": "NB_PISTOLETS",
+          "label": "Nb pistolets",
+          "unit": "-",
+          "default": 2.0
+        },
+        {
+          "key": "TEMPS_APPLI",
+          "label": "Temps appli.",
+          "unit": "s/cycle",
+          "default": 40.0
+        }
+      ]
+    },
+    {
+      "id": "PEINT_19",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Temps de cycle cabine (s)",
+      "sheet": "PEINT_19_TpsCabine",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGEMENT",
+          "label": "Chargement",
+          "unit": "s",
+          "default": 25.0
+        },
+        {
+          "key": "APPLICATION",
+          "label": "Application",
+          "unit": "s",
+          "default": 45.0
+        },
+        {
+          "key": "FLASH_OFF",
+          "label": "Flash-off",
+          "unit": "s",
+          "default": 600.0
+        }
+      ]
+    },
+    {
+      "id": "PEINT_20",
+      "domain": "🎨 Peinture & Traitement de surface",
+      "name": "Conso filtres (€/an)",
+      "sheet": "PEINT_20_ConsoFiltre",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "NB_FILTRES_AN",
+          "label": "Nb filtres/an",
+          "unit": "-",
+          "default": 30.0
+        },
+        {
+          "key": "PRIX_FILTRE",
+          "label": "Prix filtre",
+          "unit": "€/u",
+          "default": 120.0
+        }
+      ]
+    },
+    {
+      "id": "GC_01",
+      "domain": "🏗️ Génie civil & Infrastructures",
+      "name": "Charges au sol (pression)",
+      "sheet": "GC_01_ChargeSol",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "MASSE_MACHINE",
+          "label": "Masse machine",
+          "unit": "kg",
+          "default": 6500
+        },
+        {
+          "key": "EMPRISE_AU_SOL",
+          "label": "Emprise au sol",
+          "unit": "m²",
+          "default": 3.2
+        },
+        {
+          "key": "FACTEUR_DYNAMIQUE",
+          "label": "Facteur dynamique",
+          "unit": "-",
+          "default": 1.2
+        },
+        {
+          "key": "G_AUTO",
+          "label": "g (auto)",
+          "unit": "m/s²",
+          "default": "='01_PARAM'!$E$14"
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "GC_02",
+      "domain": "🏗️ Génie civil & Infrastructures",
+      "name": "Répartition massique (2 appuis)",
+      "sheet": "GC_02_Reactions",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGE_TOTALE",
+          "label": "Charge totale",
+          "unit": "kN",
+          "default": 80
+        },
+        {
+          "key": "DISTANCE_ENTRE_APPUIS",
+          "label": "Distance entre appuis",
+          "unit": "m",
+          "default": 2.8
+        },
+        {
+          "key": "POSITION_CG_DEPUIS_A",
+          "label": "Position CG depuis A",
+          "unit": "m",
+          "default": 1.3
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "GC_03",
+      "domain": "🏗️ Génie civil & Infrastructures",
+      "name": "Vérification dalle (pression admissible)",
+      "sheet": "GC_03_Dalle",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "PRESSION_CALCUL_E",
+          "label": "Pression calculée",
+          "unit": "kPa",
+          "default": 85
+        },
+        {
+          "key": "PRESSION_ADMISSIBLE",
+          "label": "Pression admissible",
+          "unit": "kPa",
+          "default": 150
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$8"
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "GC_04",
+      "domain": "🏗️ Génie civil & Infrastructures",
+      "name": "Efforts statiques (somme forces / moments)",
+      "sheet": "GC_04_Efforts",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "NOTE",
+          "label": "Note",
+          "unit": "-",
+          "default": "\"Renseigner la table charges ci-dessous\""
+        },
+        {
+          "key": "CHARGES_PONCTUELLES_JUSQU_5_CALC",
+          "label": "Charges ponctuelles (jusqu’à 5) — calcul moment",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "CHARGE",
+          "label": "Charge",
+          "unit": "Bras (m)",
+          "default": "F (kN)"
+        },
+        {
+          "key": "CHARGE_1",
+          "label": "Charge 1",
+          "unit": "0.8",
+          "default": 5
+        },
+        {
+          "key": "CHARGE_2",
+          "label": "Charge 2",
+          "unit": "-",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "id": "GC_05",
+      "domain": "🏗️ Génie civil & Infrastructures",
+      "name": "Ancrages chimiques (traction / cisaillement)",
+      "sheet": "GC_05_Ancrages",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TRACTION_TOTALE",
+          "label": "Traction totale",
+          "unit": "kN",
+          "default": 22
+        },
+        {
+          "key": "CISAILLEMENT_TOTAL",
+          "label": "Cisaillement total",
+          "unit": "kN",
+          "default": 14
+        },
+        {
+          "key": "NOMBRE_D_ANCRAGES",
+          "label": "Nombre d'ancrages",
+          "unit": "-",
+          "default": 4
+        },
+        {
+          "key": "R_SISTANCE_TRACTION_ANCRAGE",
+          "label": "Résistance traction / ancrage",
+          "unit": "kN",
+          "default": 12
+        },
+        {
+          "key": "R_SISTANCE_CISAILLEMENT_ANCRAGE",
+          "label": "Résistance cisaillement / ancrage",
+          "unit": "kN",
+          "default": 10
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$19"
+        }
+      ]
+    },
+    {
+      "id": "GC_06",
+      "domain": "🏗️ Génie civil & Infrastructures",
+      "name": "Dimensionnement supports (compression + flambage)",
+      "sheet": "GC_06_Supports",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGE_COMPRESSION",
+          "label": "Charge compression",
+          "unit": "kN",
+          "default": 40
+        },
+        {
+          "key": "SECTION_SUPPORT",
+          "label": "Section support",
+          "unit": "mm²",
+          "default": 600
+        },
+        {
+          "key": "LONGUEUR_LIBRE",
+          "label": "Longueur libre",
+          "unit": "mm",
+          "default": 900
+        },
+        {
+          "key": "FACTEUR_D_APPUIS_K",
+          "label": "Facteur d'appuis K",
+          "unit": "-",
+          "default": 1
+        },
+        {
+          "key": "MODULE_E",
+          "label": "Module E",
+          "unit": "GPa",
+          "default": 210
+        },
+        {
+          "key": "INERTIE_I",
+          "label": "Inertie I",
+          "unit": "mm⁴",
+          "default": 1000000
+        }
+      ]
+    },
+    {
+      "id": "GC_07",
+      "domain": "🏗️ Génie civil & Infrastructures",
+      "name": "Pression au sol machine",
+      "sheet": "GC_07_PressionSol",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "MASSE",
+          "label": "Masse",
+          "unit": "kg",
+          "default": 5000.0
+        },
+        {
+          "key": "SURFACE_APPUI",
+          "label": "Surface appui",
+          "unit": "m²",
+          "default": 2.5
+        }
+      ]
+    },
+    {
+      "id": "GC_10",
+      "domain": "🏗️ Génie civil & Infrastructures",
+      "name": "Pression sous dalle",
+      "sheet": "GC_10_Dalle",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGE",
+          "label": "Charge",
+          "unit": "N",
+          "default": 120000.0
+        },
+        {
+          "key": "SURFACE",
+          "label": "Surface",
+          "unit": "m²",
+          "default": 1.2
+        },
+        {
+          "key": "FACTEUR_DYNAMIQUE",
+          "label": "Facteur dynamique",
+          "unit": "-",
+          "default": 1.2
+        },
+        {
+          "key": "G_AUTO",
+          "label": "g (auto)",
+          "unit": "m/s²",
+          "default": "='01_PARAM'!$E$14"
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "GC_11",
+      "domain": "🏗️ Génie civil & Infrastructures",
+      "name": "Traction ancrage chimique",
+      "sheet": "GC_11_Ancrage",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "EFFORT",
+          "label": "Effort",
+          "unit": "N",
+          "default": 25000.0
+        },
+        {
+          "key": "NB_ANCRAGES",
+          "label": "Nb ancrages",
+          "unit": "-",
+          "default": 4.0
+        },
+        {
+          "key": "FACTEUR_DYNAMIQUE",
+          "label": "Facteur dynamique",
+          "unit": "-",
+          "default": 1.2
+        },
+        {
+          "key": "G_AUTO",
+          "label": "g (auto)",
+          "unit": "m/s²",
+          "default": "='01_PARAM'!$E$14"
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "MAN_01",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Dimensionnement convoyeur (effort total)",
+      "sheet": "MAN_01_Convoyeur",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "LONGUEUR_CONVOYEUR",
+          "label": "Longueur convoyeur",
+          "unit": "m",
+          "default": 12
+        },
+        {
+          "key": "CHARGE_MOYENNE_TRANSPORT_E",
+          "label": "Charge moyenne transportée",
+          "unit": "kg/m",
+          "default": 25
+        },
+        {
+          "key": "MASSE_BANDE_CHA_NE",
+          "label": "Masse bande/chaîne",
+          "unit": "kg/m",
+          "default": 8
+        },
+        {
+          "key": "COEF_FROTTEMENT_QUIVALENT",
+          "label": "Coef frottement équivalent",
+          "unit": "-",
+          "default": 0.04
+        },
+        {
+          "key": "INCLINAISON",
+          "label": "Inclinaison",
+          "unit": "deg",
+          "default": 0
+        },
+        {
+          "key": "G_AUTO",
+          "label": "g (auto)",
+          "unit": "m/s²",
+          "default": "='01_PARAM'!$E$14"
+        }
+      ]
+    },
+    {
+      "id": "MAN_02",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Effort moteur convoyeur (couple)",
+      "sheet": "MAN_02_MoteurConv",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "EFFORT_TOTAL",
+          "label": "Effort total",
+          "unit": "N",
+          "default": 650
+        },
+        {
+          "key": "DIAM_TRE_TAMBOUR",
+          "label": "Diamètre tambour",
+          "unit": "mm",
+          "default": 120
+        },
+        {
+          "key": "RENDEMENT_TRANSMISSION",
+          "label": "Rendement transmission",
+          "unit": "-",
+          "default": 0.85
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "MAN_03",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Charge admissible (comparaison)",
+      "sheet": "MAN_03_Charge",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGE_R_ELLE",
+          "label": "Charge réelle",
+          "unit": "kg/m",
+          "default": 25
+        },
+        {
+          "key": "CHARGE_ADMISSIBLE",
+          "label": "Charge admissible",
+          "unit": "kg/m",
+          "default": 35
+        },
+        {
+          "key": "COEF_S_CURIT",
+          "label": "Coef sécurité",
+          "unit": "-",
+          "default": 1.1
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "MAN_04",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Vitesse bande (tambour)",
+      "sheet": "MAN_04_VitesseBande",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "DIAM_TRE_TAMBOUR",
+          "label": "Diamètre tambour",
+          "unit": "mm",
+          "default": 120
+        },
+        {
+          "key": "VITESSE_ROTATION",
+          "label": "Vitesse rotation",
+          "unit": "tr/min",
+          "default": 45
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        },
+        {
+          "key": "VITESSE_BANDE",
+          "label": "Vitesse bande",
+          "unit": "m/s",
+          "default": "=PI()*(B7/1000)*B8/60"
+        }
+      ]
+    },
+    {
+      "id": "MAN_05",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Dimensionnement tables élévatrices (hydraulique)",
+      "sheet": "MAN_05_TableElev",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "CHARGE_UTILE",
+          "label": "Charge utile",
+          "unit": "kg",
+          "default": 800
+        },
+        {
+          "key": "MASSE_PLATEAU",
+          "label": "Masse plateau",
+          "unit": "kg",
+          "default": 200
+        },
+        {
+          "key": "NOMBRE_DE_V_RINS",
+          "label": "Nombre de vérins",
+          "unit": "-",
+          "default": 1
+        },
+        {
+          "key": "DIAM_TRE_PISTON",
+          "label": "Diamètre piston",
+          "unit": "mm",
+          "default": 63
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.85
+        },
+        {
+          "key": "G_AUTO",
+          "label": "g (auto)",
+          "unit": "m/s²",
+          "default": "='01_PARAM'!$E$14"
+        }
+      ]
+    },
+    {
+      "id": "MAN_06",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Vérification stabilité (renversement)",
+      "sheet": "MAN_06_Stabilite",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "MASSE_TOTALE",
+          "label": "Masse totale",
+          "unit": "kg",
+          "default": 1200
+        },
+        {
+          "key": "DEMI_LARGEUR_BASE_B",
+          "label": "Demi-largeur base (b)",
+          "unit": "m",
+          "default": 0.6
+        },
+        {
+          "key": "FORCE_HORIZONTALE",
+          "label": "Force horizontale",
+          "unit": "N",
+          "default": 600
+        },
+        {
+          "key": "HAUTEUR_D_APPLICATION",
+          "label": "Hauteur d'application",
+          "unit": "m",
+          "default": 1.2
+        },
+        {
+          "key": "MARGE_STABILIT_AUTO",
+          "label": "Marge stabilité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$20"
+        },
+        {
+          "key": "G_AUTO",
+          "label": "g (auto)",
+          "unit": "m/s²",
+          "default": "='01_PARAM'!$E$14"
+        }
+      ]
+    },
+    {
+      "id": "MAN_07",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Couple tambour convoyeur",
+      "sheet": "MAN_07_Tambour",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "TENSION_BANDE",
+          "label": "Tension bande",
+          "unit": "N",
+          "default": 500.0
+        },
+        {
+          "key": "RAYON_TAMBOUR",
+          "label": "Rayon tambour",
+          "unit": "m",
+          "default": 0.08
+        }
+      ]
+    },
+    {
+      "id": "MAN_08",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Tension bande (approx.)",
+      "sheet": "MAN_08_Tension",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "FORCE_TRACTION",
+          "label": "Force traction",
+          "unit": "N",
+          "default": 500.0
+        },
+        {
+          "key": "COEF_S_CURIT",
+          "label": "Coef sécurité",
+          "unit": "-",
+          "default": 1.5
+        }
+      ]
+    },
+    {
+      "id": "MAN_09",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Démarrage convoyeur chargé (couple)",
+      "sheet": "MAN_09_Start",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "INERTIE_QUIV",
+          "label": "Inertie équiv.",
+          "unit": "kg·m²",
+          "default": 0.5
+        },
+        {
+          "key": "VITESSE",
+          "label": "Vitesse",
+          "unit": "rpm",
+          "default": 60.0
+        },
+        {
+          "key": "TEMPS_ACCEL",
+          "label": "Temps accel",
+          "unit": "s",
+          "default": 2.0
+        }
+      ]
+    },
+    {
+      "id": "MAN_10",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Accumulation (capacité)",
+      "sheet": "MAN_10_Accum",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "LONGUEUR_ZONE",
+          "label": "Longueur zone",
+          "unit": "m",
+          "default": 5.0
+        },
+        {
+          "key": "PAS_PI_CE",
+          "label": "Pas pièce",
+          "unit": "m",
+          "default": 0.4
+        }
+      ]
+    },
+    {
+      "id": "MAN_11",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Table rouleaux (effort poussée)",
+      "sheet": "MAN_11_RouleauxEffort",
+      "notes": "Guide ergonomie : viser <150 N en manuel.",
+      "inputs": [
+        {
+          "key": "MASSE_CHARGE",
+          "label": "Masse charge",
+          "unit": "kg",
+          "default": 150.0
+        },
+        {
+          "key": "ROULEAUX",
+          "label": "μ rouleaux",
+          "unit": "-",
+          "default": 0.03
+        },
+        {
+          "key": "COEF_S_CURIT",
+          "label": "Coef sécurité",
+          "unit": "-",
+          "default": 1.3
+        }
+      ]
+    },
+    {
+      "id": "MAN_12",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Convoyeur rouleaux (puissance)",
+      "sheet": "MAN_12_RouleauxP",
+      "notes": "P = F·v/η (pré-dimensionnement).",
+      "inputs": [
+        {
+          "key": "EFFORT_TRACTION",
+          "label": "Effort traction",
+          "unit": "N",
+          "default": 200.0
+        },
+        {
+          "key": "VITESSE",
+          "label": "Vitesse",
+          "unit": "m/s",
+          "default": 0.25
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.8
+        }
+      ]
+    },
+    {
+      "id": "MAN_13",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Convoyeur bande (puissance)",
+      "sheet": "MAN_13_BandeP",
+      "notes": "F = m·g·μ + m·g·sin(θ).",
+      "inputs": [
+        {
+          "key": "MASSE_TOTALE",
+          "label": "Masse totale",
+          "unit": "kg",
+          "default": 300.0
+        },
+        {
+          "key": "BANDE",
+          "label": "μ bande",
+          "unit": "-",
+          "default": 0.05
+        },
+        {
+          "key": "PENTE",
+          "label": "Pente",
+          "unit": "°",
+          "default": 5.0
+        },
+        {
+          "key": "VITESSE",
+          "label": "Vitesse",
+          "unit": "m/s",
+          "default": 0.35
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.8
+        }
+      ]
+    },
+    {
+      "id": "MAN_14",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Convoyeur chaîne (couple pignon)",
+      "sheet": "MAN_14_ChaineCouple",
+      "notes": "Couple = F·r/η (guide).",
+      "inputs": [
+        {
+          "key": "EFFORT_TRACTION",
+          "label": "Effort traction",
+          "unit": "N",
+          "default": 800.0
+        },
+        {
+          "key": "RAYON_PIGNON",
+          "label": "Rayon pignon",
+          "unit": "m",
+          "default": 0.08
+        },
+        {
+          "key": "RENDEMENT",
+          "label": "Rendement",
+          "unit": "-",
+          "default": 0.85
+        }
+      ]
+    },
+    {
+      "id": "MAN_15",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Accumulation (capacité)",
+      "sheet": "MAN_15_Accum",
+      "notes": "Capacité accumulation avant butée.",
+      "inputs": [
+        {
+          "key": "LONGUEUR_ZONE",
+          "label": "Longueur zone",
+          "unit": "m",
+          "default": 6.0
+        },
+        {
+          "key": "PAS_PI_CE",
+          "label": "Pas pièce",
+          "unit": "m",
+          "default": 0.4
+        }
+      ]
+    },
+    {
+      "id": "MAN_16",
+      "domain": "🚚 Manutention / Convoyeurs / Tables",
+      "name": "Table élévatrice (stabilité)",
+      "sheet": "MAN_16_TableLev",
+      "notes": "Marge = (Mstab/Mrenv -1). Guide.",
+      "inputs": [
+        {
+          "key": "HAUTEUR_LEV_E",
+          "label": "Hauteur levée",
+          "unit": "m",
+          "default": 1.2
+        },
+        {
+          "key": "DEMI_LARGEUR_BASE",
+          "label": "Demi-largeur base",
+          "unit": "m",
+          "default": 0.5
+        },
+        {
+          "key": "MASSE",
+          "label": "Masse",
+          "unit": "kg",
+          "default": 300.0
+        },
+        {
+          "key": "FORCE_LAT_RALE",
+          "label": "Force latérale",
+          "unit": "N",
+          "default": 200.0
+        }
+      ]
+    },
+    {
+      "id": "PIPE_01",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Diamètre conduite (débit)",
+      "sheet": "PIPE_01_Diam",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "D_BIT",
+          "label": "Débit",
+          "unit": "m³/h",
+          "default": 10.0
+        },
+        {
+          "key": "VITESSE_CIBLE",
+          "label": "Vitesse cible",
+          "unit": "m/s",
+          "default": 2.0
+        },
+        {
+          "key": "PRESSION_MAX_R_SEAU",
+          "label": "Pression max réseau",
+          "unit": "bar abs",
+          "default": 7.5
+        },
+        {
+          "key": "PRESSION_MIN_ACCEPTABLE",
+          "label": "Pression min acceptable",
+          "unit": "bar abs",
+          "default": 6.5
+        },
+        {
+          "key": "TEMPS_TAMPON_SOUHAIT",
+          "label": "Temps tampon souhaité",
+          "unit": "s",
+          "default": 20
+        }
+      ]
+    },
+    {
+      "id": "PIPE_02",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Pertes de charge (simpl.)",
+      "sheet": "PIPE_02_Perte",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "LONGUEUR",
+          "label": "Longueur",
+          "unit": "m",
+          "default": 50.0
+        },
+        {
+          "key": "COEF",
+          "label": "Coef λ",
+          "unit": "-",
+          "default": 0.02
+        },
+        {
+          "key": "VITESSE",
+          "label": "Vitesse",
+          "unit": "m/s",
+          "default": 2.0
+        },
+        {
+          "key": "PRESSION_MIN_ACCEPTABLE",
+          "label": "Pression min acceptable",
+          "unit": "bar abs",
+          "default": 6.5
+        },
+        {
+          "key": "TEMPS_TAMPON_SOUHAIT",
+          "label": "Temps tampon souhaité",
+          "unit": "s",
+          "default": 20
+        }
+      ]
+    },
+    {
+      "id": "UTIL_01",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Air comprimé (débit / pression / ballon)",
+      "sheet": "UTIL_01_AirComp",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "D_BIT_TOTAL_CONSOMMATEURS",
+          "label": "Débit total consommateurs",
+          "unit": "Nm³/h",
+          "default": 120
+        },
+        {
+          "key": "MAJORATION_FUITES",
+          "label": "Majoration fuites",
+          "unit": "-",
+          "default": 0.1
+        },
+        {
+          "key": "PRESSION_MAX_R_SEAU",
+          "label": "Pression max réseau",
+          "unit": "bar abs",
+          "default": 7.5
+        },
+        {
+          "key": "PRESSION_MIN_ACCEPTABLE",
+          "label": "Pression min acceptable",
+          "unit": "bar abs",
+          "default": 6.5
+        },
+        {
+          "key": "TEMPS_TAMPON_SOUHAIT",
+          "label": "Temps tampon souhaité",
+          "unit": "s",
+          "default": 20
+        }
+      ]
+    },
+    {
+      "id": "UTIL_02",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Eau industrielle (débit / vitesse tuyau)",
+      "sheet": "UTIL_02_Eau",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "D_BIT_EAU",
+          "label": "Débit eau",
+          "unit": "m³/h",
+          "default": 3
+        },
+        {
+          "key": "DIAM_TRE_INTERNE_TUYAU",
+          "label": "Diamètre interne tuyau",
+          "unit": "mm",
+          "default": 32
+        },
+        {
+          "key": "VITESSE_MAX_RECOMMAND_E",
+          "label": "Vitesse max recommandée",
+          "unit": "m/s",
+          "default": 2
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "UTIL_03",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Vide (temps de mise au vide)",
+      "sheet": "UTIL_03_Vide",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "VOLUME_VACUER",
+          "label": "Volume à évacuer",
+          "unit": "m³",
+          "default": 0.08
+        },
+        {
+          "key": "VITESSE_DE_POMPAGE",
+          "label": "Vitesse de pompage",
+          "unit": "m³/h",
+          "default": 18
+        },
+        {
+          "key": "PRESSION_INITIALE",
+          "label": "Pression initiale",
+          "unit": "mbar",
+          "default": 1013
+        },
+        {
+          "key": "PRESSION_CIBLE",
+          "label": "Pression cible",
+          "unit": "mbar",
+          "default": 200
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        }
+      ]
+    },
+    {
+      "id": "UTIL_04",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Consommation énergétique ligne (kWh)",
+      "sheet": "UTIL_04_Energie",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "DUR_E_POSTE",
+          "label": "Durée poste",
+          "unit": "h",
+          "default": 8
+        },
+        {
+          "key": "NOTE",
+          "label": "Note",
+          "unit": "-",
+          "default": "\"Renseigner la table consommations ci-dessous\""
+        },
+        {
+          "key": "CONSOMMATIONS_JUSQU_10_KW_ET_FAC",
+          "label": "Consommations (jusqu’à 10) — kW et facteur d’utilisation",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "QUIPEMENT",
+          "label": "Équipement",
+          "unit": "Facteur util.",
+          "default": "P (kW)"
+        },
+        {
+          "key": "EQPT_1",
+          "label": "Eqpt 1",
+          "unit": "0.5",
+          "default": 5
+        }
+      ]
+    },
+    {
+      "id": "UTIL_05",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Bilan utilités par machine",
+      "sheet": "UTIL_05_Bilan",
+      "notes": "Aide ergonomie / pénibilité.",
+      "inputs": [
+        {
+          "key": "NOTE",
+          "label": "Note",
+          "unit": "-",
+          "default": "\"Renseigner la table utilités ci-dessous\""
+        },
+        {
+          "key": "BILAN_UTILIT_S_PAR_MACHINE_JUSQU",
+          "label": "Bilan utilités par machine (jusqu’à 8)",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "MACHINE",
+          "label": "Machine",
+          "unit": "Eau (m³/h)",
+          "default": "Air (Nm³/h)"
+        },
+        {
+          "key": "MACHINE_1",
+          "label": "Machine 1",
+          "unit": "0.2",
+          "default": 10
+        },
+        {
+          "key": "MACHINE_2",
+          "label": "Machine 2",
+          "unit": "-",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "id": "UTIL_06",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Débit air comprimé total",
+      "sheet": "UTIL_06_Air",
+      "notes": "",
+      "inputs": [
+        {
+          "key": "D_BIT_UNITAIRE",
+          "label": "Débit unitaire",
+          "unit": "Nl/min",
+          "default": 350.0
+        },
+        {
+          "key": "NB_MACHINES",
+          "label": "Nb machines",
+          "unit": "-",
+          "default": 5.0
+        },
+        {
+          "key": "PRESSION_MAX_R_SEAU",
+          "label": "Pression max réseau",
+          "unit": "bar abs",
+          "default": 7.5
+        },
+        {
+          "key": "PRESSION_MIN_ACCEPTABLE",
+          "label": "Pression min acceptable",
+          "unit": "bar abs",
+          "default": 6.5
+        },
+        {
+          "key": "TEMPS_TAMPON_SOUHAIT",
+          "label": "Temps tampon souhaité",
+          "unit": "s",
+          "default": 20
+        }
+      ]
+    },
+    {
+      "id": "UTIL_07",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Débit vide requis",
+      "sheet": "UTIL_07_Vide",
+      "notes": "Guide : vérifier tableau ISO 13857 en final.",
+      "inputs": [
+        {
+          "key": "D_BIT_UNITAIRE",
+          "label": "Débit unitaire",
+          "unit": "m³/h",
+          "default": 20.0
+        },
+        {
+          "key": "NB_POSTES",
+          "label": "Nb postes",
+          "unit": "-",
+          "default": 3.0
+        },
+        {
+          "key": "PRESSION_MAX_R_SEAU",
+          "label": "Pression max réseau",
+          "unit": "bar abs",
+          "default": 7.5
+        },
+        {
+          "key": "PRESSION_MIN_ACCEPTABLE",
+          "label": "Pression min acceptable",
+          "unit": "bar abs",
+          "default": 6.5
+        },
+        {
+          "key": "TEMPS_TAMPON_SOUHAIT",
+          "label": "Temps tampon souhaité",
+          "unit": "s",
+          "default": 20
+        }
+      ]
+    },
+    {
+      "id": "UTIL_AIR_01",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Débit air (consommation)",
+      "sheet": "UTIL_AIR_01_Debit",
+      "notes": "Pour calcul ISO 13855.",
+      "inputs": [
+        {
+          "key": "CONSOMMATION_CYLINDRE",
+          "label": "Consommation cylindre",
+          "unit": "Nl/cycle",
+          "default": 5.0
+        },
+        {
+          "key": "CYCLES_MIN",
+          "label": "Cycles/min",
+          "unit": "1/min",
+          "default": 20.0
+        }
+      ]
+    },
+    {
+      "id": "UTIL_AIR_02",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Chute de pression (approx.)",
+      "sheet": "UTIL_AIR_02_DeltaP",
+      "notes": "Évalue besoin purge/soupape.",
+      "inputs": [
+        {
+          "key": "D_BIT",
+          "label": "Débit",
+          "unit": "Nm³/h",
+          "default": 100.0
+        },
+        {
+          "key": "LONGUEUR",
+          "label": "Longueur",
+          "unit": "m",
+          "default": 30.0
+        },
+        {
+          "key": "DIAM_TRE_INTERNE",
+          "label": "Diamètre interne",
+          "unit": "mm",
+          "default": 20.0
+        }
+      ]
+    },
+    {
+      "id": "UTIL_AIR_03",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Consommation air par cycle",
+      "sheet": "UTIL_AIR_03_Cycle",
+      "notes": "Guide protection / carter.",
+      "inputs": [
+        {
+          "key": "D_BIT",
+          "label": "Débit",
+          "unit": "Nl/min",
+          "default": 100.0
+        },
+        {
+          "key": "TEMPS_CYCLE",
+          "label": "Temps cycle",
+          "unit": "s",
+          "default": 20.0
+        }
+      ]
+    },
+    {
+      "id": "UTIL_AIR_04",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Compresseur (débit requis)",
+      "sheet": "UTIL_AIR_04_Comp",
+      "notes": "Pré-étude ISO 13849-1 (à confirmer avec analyse risque).",
+      "inputs": [
+        {
+          "key": "SOMME_D_BITS",
+          "label": "Somme débits",
+          "unit": "Nm³/min",
+          "default": 10.0
+        },
+        {
+          "key": "MARGE",
+          "label": "Marge",
+          "unit": "-",
+          "default": 1.2
+        }
+      ]
+    },
+    {
+      "id": "UTIL_AIR_05",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Sécheur (débit)",
+      "sheet": "UTIL_AIR_05_Dryer",
+      "notes": "M = capteur/FOV. Aide choix optique.",
+      "inputs": [
+        {
+          "key": "D_BIT_COMPRESSEUR",
+          "label": "Débit compresseur",
+          "unit": "Nm³/min",
+          "default": 12.0
+        },
+        {
+          "key": "COEF_CORRECTION",
+          "label": "Coef correction",
+          "unit": "-",
+          "default": 1.1
+        }
+      ]
+    },
+    {
+      "id": "UTIL_EAU_01",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Débit eau industrielle",
+      "sheet": "UTIL_EAU_01_Debit",
+      "notes": "Cible typique : <0.5 px.",
+      "inputs": [
+        {
+          "key": "PUISSANCE_THERMIQUE",
+          "label": "Puissance thermique",
+          "unit": "kW",
+          "default": 10.0
+        },
+        {
+          "key": "T_EAU",
+          "label": "ΔT eau",
+          "unit": "°C",
+          "default": 5.0
+        }
+      ]
+    },
+    {
+      "id": "UTIL_EAU_02",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Puissance thermique dissipée",
+      "sheet": "UTIL_EAU_02_Q",
+      "notes": "x>3 : penser strobe/optique/ISO.",
+      "inputs": [
+        {
+          "key": "D_BIT_EAU",
+          "label": "Débit eau",
+          "unit": "m³/h",
+          "default": 2.0
+        },
+        {
+          "key": "T_EAU",
+          "label": "ΔT eau",
+          "unit": "°C",
+          "default": 5.0
+        }
+      ]
+    },
+    {
+      "id": "UTIL_VIDE_01",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Débit vide requis",
+      "sheet": "UTIL_VIDE_01_Debit",
+      "notes": "Approx macro (guide).",
+      "inputs": [
+        {
+          "key": "VOLUME_VACUER",
+          "label": "Volume à évacuer",
+          "unit": "L",
+          "default": 2.0
+        },
+        {
+          "key": "TEMPS_CIBLE",
+          "label": "Temps cible",
+          "unit": "s",
+          "default": 1.0
+        }
+      ]
+    },
+    {
+      "id": "UTIL_VIDE_02",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Temps de mise au vide (approx.)",
+      "sheet": "UTIL_VIDE_02_Time",
+      "notes": "SNR >10 recommandé pour robustesse.",
+      "inputs": [
+        {
+          "key": "VOLUME",
+          "label": "Volume",
+          "unit": "L",
+          "default": 2.0
+        },
+        {
+          "key": "D_BIT_POMPE",
+          "label": "Débit pompe",
+          "unit": "L/s",
+          "default": 5.0
+        }
+      ]
+    },
+    {
+      "id": "UTIL_VIDE_03",
+      "domain": "🔧 Utilités industrielles",
+      "name": "Effort de préhension (ventouses)",
+      "sheet": "UTIL_VIDE_03_Force",
+      "notes": "Cible : ≥4 px/module (DataMatrix).",
+      "inputs": [
+        {
+          "key": "DIAM_TRE_VENTOUSE",
+          "label": "Diamètre ventouse",
+          "unit": "mm",
+          "default": 50.0
+        },
+        {
+          "key": "D_PRESSION",
+          "label": "Dépression",
+          "unit": "bar",
+          "default": -0.6
+        }
+      ]
+    },
+    {
+      "id": "CE_05",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Temps purge pneumatique",
+      "sheet": "CE_05_PneuPurge",
+      "notes": "Énergie résiduelle.",
+      "inputs": [
+        {
+          "key": "VOLUME",
+          "label": "Volume",
+          "unit": "L",
+          "default": 3.0
+        },
+        {
+          "key": "D_BIT_PURGE",
+          "label": "Débit purge",
+          "unit": "Nl/min",
+          "default": 1500.0
+        },
+        {
+          "key": "DIAM_TRE_EXISTANT_D",
+          "label": "Diamètre existant D",
+          "unit": "mm",
+          "default": 40
+        },
+        {
+          "key": "LIMITE_LASTIQUE_RE",
+          "label": "Limite élastique Re",
+          "unit": "MPa",
+          "default": 355
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$6"
+        }
+      ]
+    },
+    {
+      "id": "CE_06",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "STO requis (guide)",
+      "sheet": "CE_06_STO",
+      "notes": "Architecture sécurité.",
+      "inputs": [
+        {
+          "key": "NERGIE_ROTATION",
+          "label": "Énergie rotation",
+          "unit": "0/1",
+          "default": 1.0
+        },
+        {
+          "key": "ACC_S_FR_QUENT",
+          "label": "Accès fréquent",
+          "unit": "0/1",
+          "default": 1.0
+        },
+        {
+          "key": "DIAM_TRE_EXISTANT_D",
+          "label": "Diamètre existant D",
+          "unit": "mm",
+          "default": 40
+        },
+        {
+          "key": "LIMITE_LASTIQUE_RE",
+          "label": "Limite élastique Re",
+          "unit": "MPa",
+          "default": 355
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$6"
+        }
+      ]
+    },
+    {
+      "id": "CE_07",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Capacité PL (guide SRP/CS)",
+      "sheet": "CE_07_SRPCS",
+      "notes": "Guide ISO 13849-1 : pré-dimensionnement (à valider avec outils PL/MTTFd/DC).",
+      "inputs": [
+        {
+          "key": "PLR_REQUIS",
+          "label": "PLr requis",
+          "unit": "(2=b,3=c,4=d,5=e)",
+          "default": 4.0
+        },
+        {
+          "key": "CAT_GORIE",
+          "label": "Catégorie",
+          "unit": "2/3/4",
+          "default": 3.0
+        },
+        {
+          "key": "DCAVG",
+          "label": "DCavg",
+          "unit": "%",
+          "default": 60.0
+        },
+        {
+          "key": "MTTFD",
+          "label": "MTTFd",
+          "unit": "ans",
+          "default": 30.0
+        },
+        {
+          "key": "CCF_SCORE",
+          "label": "CCF score",
+          "unit": "points",
+          "default": 65.0
+        }
+      ]
+    },
+    {
+      "id": "CE_08",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Distance sécurité (ISO 13855)",
+      "sheet": "CE_08_ISO13855",
+      "notes": "Formule ISO 13855 : S = K·T + C. Marge conseillée +100 mm.",
+      "inputs": [
+        {
+          "key": "DISTANCE_INSTALL_E",
+          "label": "Distance installée",
+          "unit": "mm",
+          "default": 800.0
+        },
+        {
+          "key": "K",
+          "label": "K",
+          "unit": "mm/s",
+          "default": 1600.0
+        },
+        {
+          "key": "TEMPS_TOTAL_T",
+          "label": "Temps total T",
+          "unit": "s",
+          "default": 0.4
+        },
+        {
+          "key": "C",
+          "label": "C",
+          "unit": "mm",
+          "default": 120.0
+        }
+      ]
+    },
+    {
+      "id": "CE_09",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Muting / Reset (check score)",
+      "sheet": "CE_09_Muting",
+      "notes": "Checklist fonction sécurité (pré-audit).",
+      "inputs": [
+        {
+          "key": "RESET_S_CURIS",
+          "label": "Reset sécurisé",
+          "unit": "0/1",
+          "default": 1.0
+        },
+        {
+          "key": "MUTING_4_CAPTEURS",
+          "label": "Muting 4 capteurs",
+          "unit": "0/1",
+          "default": 0.0
+        },
+        {
+          "key": "EDM_RETOUR_CONTACTEUR",
+          "label": "EDM (retour contacteur)",
+          "unit": "0/1",
+          "default": 1.0
+        },
+        {
+          "key": "ANTI_BYPASS",
+          "label": "Anti-bypass",
+          "unit": "0/1",
+          "default": 0.0
+        },
+        {
+          "key": "SIGNALISATION",
+          "label": "Signalisation",
+          "unit": "0/1",
+          "default": 1.0
+        },
+        {
+          "key": "VALIDATION_ESSAIS",
+          "label": "Validation essais",
+          "unit": "0/1",
+          "default": 0.0
+        }
+      ]
+    },
+    {
+      "id": "CE_10",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Énergies dangereuses / LOTO (score)",
+      "sheet": "CE_10_Loto",
+      "notes": "Audit énergie résiduelle & consignation (LOTO).",
+      "inputs": [
+        {
+          "key": "LEC_ISOLABLE",
+          "label": "Élec isolable",
+          "unit": "0/1",
+          "default": 1.0
+        },
+        {
+          "key": "PNEUM_PURGE",
+          "label": "Pneum purge",
+          "unit": "0/1",
+          "default": 1.0
+        },
+        {
+          "key": "HYDRAU_PURGE",
+          "label": "Hydrau purge",
+          "unit": "0/1",
+          "default": 0.0
+        },
+        {
+          "key": "M_CANIQUE_BLOCAGE",
+          "label": "Mécanique blocage",
+          "unit": "0/1",
+          "default": 0.0
+        },
+        {
+          "key": "NERGIE_STOCK_E_VALU_E",
+          "label": "Énergie stockée évaluée",
+          "unit": "0/1",
+          "default": 1.0
+        },
+        {
+          "key": "PROC_DURE_LOTO",
+          "label": "Procédure LOTO",
+          "unit": "0/1",
+          "default": 0.0
+        }
+      ]
+    },
+    {
+      "id": "ERGO_01",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Charge manutention opérateur",
+      "sheet": "ERGO_01_Charge",
+      "notes": "Aide ergonomie / pénibilité.",
+      "inputs": [
+        {
+          "key": "CHARGE",
+          "label": "Charge",
+          "unit": "kg",
+          "default": 18.0
+        },
+        {
+          "key": "MOMENT_DE_FLEXION_M",
+          "label": "Moment de flexion M",
+          "unit": "N·m",
+          "default": 400
+        },
+        {
+          "key": "DIAM_TRE_EXISTANT_D",
+          "label": "Diamètre existant D",
+          "unit": "mm",
+          "default": 40
+        },
+        {
+          "key": "LIMITE_LASTIQUE_RE",
+          "label": "Limite élastique Re",
+          "unit": "MPa",
+          "default": 355
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$6"
+        }
+      ]
+    },
+    {
+      "id": "ERGO_02",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Charge cumulée (kg·h)",
+      "sheet": "ERGO_02_CycleEffort",
+      "notes": "Aide ergonomie / pénibilité.",
+      "inputs": [
+        {
+          "key": "CHARGE",
+          "label": "Charge",
+          "unit": "kg",
+          "default": 8.0
+        },
+        {
+          "key": "FR_QUENCE",
+          "label": "Fréquence",
+          "unit": "op/h",
+          "default": 120.0
+        },
+        {
+          "key": "HEURES_J",
+          "label": "Heures/j",
+          "unit": "h",
+          "default": 7.0
+        }
+      ]
+    },
+    {
+      "id": "SAFE_01",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Distance de sécurité ISO 13855",
+      "sheet": "SAFE_01_Distance",
+      "notes": "Architecture sécurité.",
+      "inputs": [
+        {
+          "key": "VITESSE_APPROCHE",
+          "label": "Vitesse approche",
+          "unit": "m/s",
+          "default": 1.6
+        },
+        {
+          "key": "TEMPS_ARR_T",
+          "label": "Temps arrêt",
+          "unit": "s",
+          "default": 0.4
+        },
+        {
+          "key": "DIAM_TRE_EXISTANT_D",
+          "label": "Diamètre existant D",
+          "unit": "mm",
+          "default": 40
+        },
+        {
+          "key": "LIMITE_LASTIQUE_RE",
+          "label": "Limite élastique Re",
+          "unit": "MPa",
+          "default": 355
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$6"
+        }
+      ]
+    },
+    {
+      "id": "SAFE_02",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Ouverture vs distance (ISO 13857, guide)",
+      "sheet": "SAFE_02_Ouverture",
+      "notes": "Guide : vérifier tableau ISO 13857 en final.",
+      "inputs": [
+        {
+          "key": "OUVERTURE_A",
+          "label": "Ouverture a",
+          "unit": "mm",
+          "default": 20.0
+        },
+        {
+          "key": "DISTANCE_S",
+          "label": "Distance S",
+          "unit": "mm",
+          "default": 200.0
+        }
+      ]
+    },
+    {
+      "id": "SAFE_03",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Temps d’arrêt total (s)",
+      "sheet": "SAFE_03_Arret",
+      "notes": "Pour calcul ISO 13855.",
+      "inputs": [
+        {
+          "key": "TEMPS_STOP_MACHINE",
+          "label": "Temps stop machine",
+          "unit": "s",
+          "default": 0.25
+        },
+        {
+          "key": "TEMPS_CAPTEUR_PLC",
+          "label": "Temps capteur/PLC",
+          "unit": "s",
+          "default": 0.05
+        },
+        {
+          "key": "TEMPS_CONTACTEUR",
+          "label": "Temps contacteur",
+          "unit": "s",
+          "default": 0.1
+        }
+      ]
+    },
+    {
+      "id": "SAFE_04",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Énergie pneumatique stockée (J)",
+      "sheet": "SAFE_04_EnergiePneum",
+      "notes": "Évalue besoin purge/soupape.",
+      "inputs": [
+        {
+          "key": "PRESSION",
+          "label": "Pression",
+          "unit": "bar",
+          "default": 6.0
+        },
+        {
+          "key": "VOLUME",
+          "label": "Volume",
+          "unit": "L",
+          "default": 2.0
+        },
+        {
+          "key": "COEF",
+          "label": "Coef",
+          "unit": "-",
+          "default": 1.0
+        }
+      ]
+    },
+    {
+      "id": "SAFE_05",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "Énergie cinétique (J)",
+      "sheet": "SAFE_05_Inertie",
+      "notes": "Guide protection / carter.",
+      "inputs": [
+        {
+          "key": "MASSE_QUIV",
+          "label": "Masse équiv.",
+          "unit": "kg",
+          "default": 20.0
+        },
+        {
+          "key": "VITESSE",
+          "label": "Vitesse",
+          "unit": "m/s",
+          "default": 1.0
+        }
+      ]
+    },
+    {
+      "id": "SAFE_06",
+      "domain": "🛡️ Sécurité & Ergonomie",
+      "name": "PLr guide (risque simplifié)",
+      "sheet": "SAFE_06_SILGuide",
+      "notes": "Pré-étude ISO 13849-1 (à confirmer avec analyse risque).",
+      "inputs": [
+        {
+          "key": "S_V_RIT_S",
+          "label": "Sévérité S",
+          "unit": "(1-2)",
+          "default": 2.0
+        },
+        {
+          "key": "FR_QUENCE_F",
+          "label": "Fréquence F",
+          "unit": "(1-2)",
+          "default": 2.0
+        },
+        {
+          "key": "VITEMENT_P",
+          "label": "Évitement P",
+          "unit": "(1-2)",
+          "default": 2.0
+        }
+      ]
+    },
+    {
+      "id": "AP_01",
+      "domain": "🧠 Transverse / Avant-projet",
+      "name": "Temps de cycle global (goulot)",
+      "sheet": "AP_01_CycleGlobal",
+      "notes": "M = capteur/FOV. Aide choix optique.",
+      "inputs": [
+        {
+          "key": "TEMPS_MANUTENTION_TRANSFERT",
+          "label": "Temps manutention / transfert",
+          "unit": "s",
+          "default": 4
+        },
+        {
+          "key": "MARGE_BUFFER",
+          "label": "Marge / buffer",
+          "unit": "s",
+          "default": 2
+        },
+        {
+          "key": "NOTE",
+          "label": "Note",
+          "unit": "-",
+          "default": "\"Renseigner la table temps postes ci-dessous\""
+        },
+        {
+          "key": "TEMPS_POSTES_JUSQU_10_UTILISER_S",
+          "label": "Temps postes (jusqu’à 10) — utiliser sec",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "POSTE",
+          "label": "Poste",
+          "unit": "Manuel ? (1/0)",
+          "default": "Temps (s)"
+        }
+      ]
+    },
+    {
+      "id": "AP_02",
+      "domain": "🧠 Transverse / Avant-projet",
+      "name": "Capacité ligne (pcs/h, pcs/shift)",
+      "sheet": "AP_02_Capacite",
+      "notes": "Cible typique : <0.5 px.",
+      "inputs": [
+        {
+          "key": "TEMPS_CYCLE",
+          "label": "Temps cycle",
+          "unit": "s",
+          "default": 28
+        },
+        {
+          "key": "DISPONIBILIT_TH_ORIQUE",
+          "label": "Disponibilité (théorique)",
+          "unit": "-",
+          "default": 0.9
+        },
+        {
+          "key": "DUR_E_POSTE",
+          "label": "Durée poste",
+          "unit": "h",
+          "default": 8
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "AP_03",
+      "domain": "🧠 Transverse / Avant-projet",
+      "name": "TRS théorique (OEE)",
+      "sheet": "AP_03_TRS",
+      "notes": "x>3 : penser strobe/optique/ISO.",
+      "inputs": [
+        {
+          "key": "DISPONIBILIT",
+          "label": "Disponibilité",
+          "unit": "-",
+          "default": 0.9
+        },
+        {
+          "key": "PERFORMANCE",
+          "label": "Performance",
+          "unit": "-",
+          "default": 0.95
+        },
+        {
+          "key": "QUALIT",
+          "label": "Qualité",
+          "unit": "-",
+          "default": 0.98
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "AP_04",
+      "domain": "🧠 Transverse / Avant-projet",
+      "name": "Cadence / Takt time",
+      "sheet": "AP_04_Takt",
+      "notes": "Approx macro (guide).",
+      "inputs": [
+        {
+          "key": "DEMANDE",
+          "label": "Demande",
+          "unit": "pcs/h",
+          "default": 90
+        },
+        {
+          "key": "TEMPS_DISPONIBLE",
+          "label": "Temps disponible",
+          "unit": "s/h",
+          "default": 3600
+        },
+        {
+          "key": "TEMPS_CYCLE_LIGNE",
+          "label": "Temps cycle ligne",
+          "unit": "s",
+          "default": 28
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "AP_05",
+      "domain": "🧠 Transverse / Avant-projet",
+      "name": "Besoin opérateur (tâches manuelles)",
+      "sheet": "AP_05_Operateurs",
+      "notes": "SNR >10 recommandé pour robustesse.",
+      "inputs": [
+        {
+          "key": "TEMPS_MANUEL_PAR_PI_CE",
+          "label": "Temps manuel par pièce",
+          "unit": "s",
+          "default": 32
+        },
+        {
+          "key": "TAKT_TIME",
+          "label": "Takt time",
+          "unit": "s/pc",
+          "default": 40
+        },
+        {
+          "key": "EFFICACIT_OP_RATEUR",
+          "label": "Efficacité opérateur",
+          "unit": "-",
+          "default": 0.85
+        },
+        {
+          "key": "R_SULTATS",
+          "label": "RÉSULTATS",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "R_SULTAT",
+          "label": "Résultat",
+          "unit": "Unité",
+          "default": "Valeur"
+        }
+      ]
+    },
+    {
+      "id": "AP_06",
+      "domain": "🧠 Transverse / Avant-projet",
+      "name": "Comparatif solutions techniques (scoring)",
+      "sheet": "AP_06_Comparatif",
+      "notes": "Cible : ≥4 px/module (DataMatrix).",
+      "inputs": [
+        {
+          "key": "NOTE",
+          "label": "Note",
+          "unit": "-",
+          "default": "\"Renseigner la matrice comparatif ci-dessous\""
+        },
+        {
+          "key": "COMPARATIF_SOLUTIONS_POND_RATION",
+          "label": "Comparatif solutions — pondération & scoring (0–5)",
+          "unit": "-",
+          "default": null
+        },
+        {
+          "key": "CRIT_RE",
+          "label": "Critère",
+          "unit": "Sol A",
+          "default": "Poids (0-1)"
+        },
+        {
+          "key": "CAPEX",
+          "label": "CAPEX",
+          "unit": "3",
+          "default": 0.15
+        },
+        {
+          "key": "OPEX",
+          "label": "OPEX",
+          "unit": "3",
+          "default": 0.15
+        }
+      ]
+    },
+    {
+      "id": "AP_07",
+      "domain": "🧠 Transverse / Avant-projet",
+      "name": "Équilibrage ligne (nb postes)",
+      "sheet": "AP_07_Equil",
+      "notes": "Si marge <0 : revoir DOF/optique.",
+      "inputs": [
+        {
+          "key": "TEMPS_TOTAL_OP_RATIONS",
+          "label": "Temps total opérations",
+          "unit": "s",
+          "default": 120.0
+        },
+        {
+          "key": "TAKT_TIME",
+          "label": "Takt time",
+          "unit": "s",
+          "default": 40.0
+        }
+      ]
+    },
+    {
+      "id": "AP_08",
+      "domain": "🧠 Transverse / Avant-projet",
+      "name": "CAPEX machine (synthèse)",
+      "sheet": "AP_08_CAPEX",
+      "notes": "Guide : vérifier tableau ISO 13857 en final.",
+      "inputs": [
+        {
+          "key": "TUDES",
+          "label": "Études",
+          "unit": "€",
+          "default": 20000.0
+        },
+        {
+          "key": "MAT_RIEL",
+          "label": "Matériel",
+          "unit": "€",
+          "default": 80000.0
+        },
+        {
+          "key": "MONTAGE",
+          "label": "Montage",
+          "unit": "€",
+          "default": 15000.0
+        },
+        {
+          "key": "MISE_EN_SERVICE",
+          "label": "Mise en service",
+          "unit": "€",
+          "default": 10000.0
+        }
+      ]
+    },
+    {
+      "id": "AP_09",
+      "domain": "🧠 Transverse / Avant-projet",
+      "name": "OPEX annuel (synthèse)",
+      "sheet": "AP_09_OPEX",
+      "notes": "Pour calcul ISO 13855.",
+      "inputs": [
+        {
+          "key": "NERGIE",
+          "label": "Énergie",
+          "unit": "€/an",
+          "default": 5000.0
+        },
+        {
+          "key": "MAINTENANCE",
+          "label": "Maintenance",
+          "unit": "€/an",
+          "default": 8000.0
+        },
+        {
+          "key": "CONSOMMABLES",
+          "label": "Consommables",
+          "unit": "€/an",
+          "default": 3000.0
+        },
+        {
+          "key": "MAIN_D_UVRE",
+          "label": "Main d'œuvre",
+          "unit": "€/an",
+          "default": 0.0
+        }
+      ]
+    },
+    {
+      "id": "CE_01",
+      "domain": "🛡️ CE Machine",
+      "name": "Cotation risque ISO 12100",
+      "sheet": "CE_01_Risk",
+      "notes": "Évalue besoin purge/soupape.",
+      "inputs": [
+        {
+          "key": "GRAVIT",
+          "label": "Gravité",
+          "unit": "1-4",
+          "default": 3.0
+        },
+        {
+          "key": "FR_QUENCE",
+          "label": "Fréquence",
+          "unit": "1-4",
+          "default": 3.0
+        },
+        {
+          "key": "VITEMENT",
+          "label": "Évitement",
+          "unit": "1-4",
+          "default": 2.0
+        },
+        {
+          "key": "LIMITE_LASTIQUE_RE",
+          "label": "Limite élastique Re",
+          "unit": "MPa",
+          "default": 355
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$6"
+        }
+      ]
+    },
+    {
+      "id": "CE_02",
+      "domain": "🛡️ CE Machine",
+      "name": "Niveau de performance requis (PLr)",
+      "sheet": "CE_02_PL",
+      "notes": "Guide protection / carter.",
+      "inputs": [
+        {
+          "key": "GRAVIT",
+          "label": "Gravité",
+          "unit": "S",
+          "default": 3.0
+        },
+        {
+          "key": "FR_QUENCE",
+          "label": "Fréquence",
+          "unit": "F",
+          "default": 2.0
+        },
+        {
+          "key": "POSSIBILIT",
+          "label": "Possibilité",
+          "unit": "P",
+          "default": 2.0
+        },
+        {
+          "key": "LIMITE_LASTIQUE_RE",
+          "label": "Limite élastique Re",
+          "unit": "MPa",
+          "default": 355
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$6"
+        }
+      ]
+    },
+    {
+      "id": "CE_03",
+      "domain": "🛡️ CE Machine",
+      "name": "Temps arrêt sécurité",
+      "sheet": "CE_03_Stop",
+      "notes": "Pré-étude ISO 13849-1 (à confirmer avec analyse risque).",
+      "inputs": [
+        {
+          "key": "TEMPS_R_ACTION",
+          "label": "Temps réaction",
+          "unit": "s",
+          "default": 0.25
+        },
+        {
+          "key": "TEMPS_FREINAGE",
+          "label": "Temps freinage",
+          "unit": "s",
+          "default": 0.35
+        },
+        {
+          "key": "DIAM_TRE_EXISTANT_D",
+          "label": "Diamètre existant D",
+          "unit": "mm",
+          "default": 40
+        },
+        {
+          "key": "LIMITE_LASTIQUE_RE",
+          "label": "Limite élastique Re",
+          "unit": "MPa",
+          "default": 355
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$6"
+        }
+      ]
+    },
+    {
+      "id": "CE_04",
+      "domain": "🛡️ CE Machine",
+      "name": "Checklist validation CE",
+      "sheet": "CE_04_Validation",
+      "notes": "Aide ergonomie / pénibilité.",
+      "inputs": [
+        {
+          "key": "DOCS",
+          "label": "Docs",
+          "unit": "OK=1",
+          "default": 1.0
+        },
+        {
+          "key": "TESTS",
+          "label": "Tests",
+          "unit": "OK=1",
+          "default": 1.0
+        },
+        {
+          "key": "MARQUAGE",
+          "label": "Marquage",
+          "unit": "OK=1",
+          "default": 1.0
+        },
+        {
+          "key": "LIMITE_LASTIQUE_RE",
+          "label": "Limite élastique Re",
+          "unit": "MPa",
+          "default": 355
+        },
+        {
+          "key": "COEF_S_CURIT_AUTO",
+          "label": "Coef sécurité (auto)",
+          "unit": "-",
+          "default": "='01_PARAM'!$E$6"
         }
       ]
     }
-  ]
+  ],
+  "missing_tool_sheets": 0
 }

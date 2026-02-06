@@ -1,8 +1,33 @@
-<!doctype html><html lang="fr"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="theme-color" content="#0b3b5a"/><link rel="manifest" href="manifest.webmanifest"/>
-<link rel="stylesheet" href="styles.css"/><title>Calculothèque</title></head>
-<body><header><h1>Calculothèque</h1><input id="search" placeholder="Rechercher un outil…"/></header>
-<main id="app"><section id="domains"></section><section id="tools" class="hidden"></section><section id="tool" class="hidden"></section></main>
-<footer><button id="back" class="hidden">← Retour</button><button id="install" class="hidden">Installer</button></footer>
-<script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b3b5a" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Calculothèque</title>
+</head>
+<body>
+  <header>
+    <div class="top">
+      <h1>Calculothèque</h1>
+      <button id="install" class="hidden primary">Installer</button>
+    </div>
+    <input id="search" placeholder="Rechercher un outil (ID, nom, notes)…" />
+  </header>
+
+  <main id="app">
+    <section id="domains"></section>
+    <section id="tools" class="hidden"></section>
+    <section id="tool" class="hidden"></section>
+  </main>
+
+  <footer>
+    <button id="back" class="hidden">← Retour</button>
+    <div class="muted" id="meta"></div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
